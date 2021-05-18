@@ -13,12 +13,12 @@ class Game {
   }
 
   async start() {
-    // When user visit the page
+    // Cuando el usuario visite la página
     if (gameState === null) {
       welcome.display();
     }
 
-    // //When user loged in successfully
+    // //Cuando el usuario inicie sesión correctamente
     if (gameState === 0) {
       var playerCountRef = await db
         .ref(`users/${secret_word}/player_count/`)
@@ -41,20 +41,20 @@ class Game {
 
       //var display_position = 100;
 
-      //index of the array
+      //índice de la matriz
       var index = 0;
 
-      //x and y position of the cars
+      //posición x e y de los autos
       var x = width / 2 - 680;
       var y;
 
       for (var plr in allPlayers) {
-        //add 1 to the index for every loop
+        //agrega 1 para el índice de cada bucle 
         index = index + 1;
 
-        //position the cars a little away from each other in x direction
+        //coloca los autos un poco alejados entre sí, en la dirección x
         x = x + 455;
-        //use data form the database to display the cars in y direction
+        //utiliza datos de la base de datos, para mostrar los autos en la dirección y
         y = height - allPlayers[plr].distance;
         cars[index - 1].x = x;
         cars[index - 1].y = y;
@@ -80,8 +80,8 @@ class Game {
       player.rank += 1;
       Player.updateCarsAtEnd(player.rank);
       swal({
-        title: `Awesome!${"\n"}Rank${"\n"}${player.rank}`,
-        text: "You reached the finish line successfully",
+        title: `¡Genial!${"\n"}Rank${"\n"}${player.rank}`,
+        text: "Llegaste a la meta con éxito",
         imageUrl:
           "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/cup.png",
         imageSize: "100x100",
