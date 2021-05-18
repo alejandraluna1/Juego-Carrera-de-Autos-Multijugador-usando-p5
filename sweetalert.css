@@ -19,14 +19,14 @@ body.stop-scrolling {
 .sweet-alert {
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  width: 478px;
+  width: 378px;
   padding: 17px;
   border-radius: 5px;
   text-align: center;
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left: -256px;
+  margin-left: -200px;
   margin-top: -200px;
   overflow: hidden;
   display: none;
@@ -366,7 +366,7 @@ body.stop-scrolling {
       background-repeat: no-repeat; }
 
 /*
- * Animations
+ * Animaciones
  */
 @-webkit-keyframes showSweetAlert {
   0% {
@@ -726,17 +726,17 @@ body.stop-scrolling {
   100% {
     transform: rotate(360deg); } }
 
-/* Internet Explorer 9 has some special quirks that are fixed here */
-/* The icons are not animated. */
-/* This file is automatically merged into sweet-alert.min.js through Gulp */
-/* Error icon */
+/* Internet Explorer 9 tiene algunas peculiaridades especiales que se corrigen aquí */
+/* Los iconos no están animados. */
+/* Este archivo se fusiona automáticamente con sweet-alert.min.js a través de Gulp */
+/* Ícono de icon */
 .sweet-alert .sa-icon.sa-error .sa-line.sa-left {
   -ms-transform: rotate(45deg) \9; }
 
 .sweet-alert .sa-icon.sa-error .sa-line.sa-right {
   -ms-transform: rotate(-45deg) \9; }
 
-/* Success icon */
+/* Ícono de éxito */
 .sweet-alert .sa-icon.sa-success {
   border-color: transparent\9; }
 
@@ -747,9 +747,9 @@ body.stop-scrolling {
   -ms-transform: rotate(-45deg) \9; }
 
 /*!
- * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
- * Copyright 2015 Daniel Cardoso <@DanielCardoso>
- * Licensed under MIT
+ * Subir Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Derechos de Autor 2015 Daniel Cardoso <@DanielCardoso>
+ * Con Licencia del MIT
  */
 .la-ball-fall,
 .la-ball-fall > div {
