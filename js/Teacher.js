@@ -1,14 +1,14 @@
 class Teacher {
   constructor() {
-    this.generateSecretWord = createButton("Genrate Secret Word");
+    this.generateSecretWord = createButton("Genera palabra secreta");
     this.message = createElement("h3");
     this.secretWord = createElement("h3");
 
-    this.nameInput = createInput("").attribute("placeholder", "Name");
+    this.nameInput = createInput("").attribute("placeholder", "Nombre");
     this.greeting = createElement("h2");
     this.greeting2 = createElement("h3");
 
-    this.playButton = createButton("Play");
+    this.playButton = createButton("Jugar");
   }
 
   hideElements() {
@@ -54,7 +54,7 @@ class Teacher {
         this.login(response.token, word);
       } else {
         swal({
-          title: `Unsuccessfull Login`,
+          title: `Inicio de sesión fallido`,
           text: `${response.error_message}`,
           type: "error",
           confirmButtonText: "Ok",
@@ -73,7 +73,7 @@ class Teacher {
         var errorCode = error.code;
         var errorMessage = error.message;
         swal({
-          title: `Unsuccessfull Login`,
+          title: `Inicio de sesión fallido`,
           text: `${errorMessage}`,
           type: "error",
           confirmButtonText: "Ok",
@@ -86,8 +86,8 @@ class Teacher {
       this.generateSecretWord.hide();
       secret_word = this.makeId(5);
       this.getToken(secret_word);
-      this.message.html("Send your secret word to student !");
-      this.secretWord.html(`Secret Word = ${secret_word}`);
+      this.message.html("¡Envía tu palabra secreta al alumno!");
+      this.secretWord.html(`Palabra secreta = ${secret_word}`);
 
       this.nameInput.position(width / 2.3, height / 2 - 120);
       this.playButton.position(width / 2.3, height / 2 - 60);
@@ -100,10 +100,10 @@ class Teacher {
       player.index = playerCount;
       player.update();
       player.updateCount(playerCount);
-      this.greeting.html("Hello " + player.name);
+      this.greeting.html("Hola " + player.name);
       this.greeting.position(width / 2 - 70, height / 4);
 
-      this.greeting2.html("Waiting for other players to join ....");
+      this.greeting2.html("Esperando que otros jugadores se unan ....");
       this.greeting2.position(width / 2.5, height / 3.2);
 
       this.secretWord.position(width / 2.3, height / 2.5);
