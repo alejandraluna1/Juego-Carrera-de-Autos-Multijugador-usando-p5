@@ -2,14 +2,14 @@ class Student {
   constructor() {
     this.secretWordInput = createInput("").attribute(
       "placeholder",
-      "Enter your secret word"
+      "Ingresa tu palabra secreta"
     );
 
-    this.nameInput = createInput("").attribute("placeholder", "Name");
+    this.nameInput = createInput("").attribute("placeholder", "Nombre");
     this.greeting = createElement("h2");
     this.greeting2 = createElement("h3");
-    this.submitButton = createButton("Submit");
-    this.playButton = createButton("Play");
+    this.submitButton = createButton("Enviar");
+    this.playButton = createButton("Jugar");
   }
 
   hideElements() {
@@ -36,7 +36,7 @@ class Student {
         this.login(response.token, word);
       } else {
         swal({
-          title: `Unsuccessfull Login`,
+          title: `Inicio de sesión fallido`,
           text: `${response.error_message}`,
           type: "error",
           confirmButtonText: "Ok",
@@ -49,7 +49,7 @@ class Student {
     fireAuth.signInWithCustomToken(token).catch(function (error) {
       var errorCode = error.code;
       var errorMessage = error.message;
-      // TODO: Add Swal Pop up
+      // TODO: Agrega ventana emergente Swal
     });
   }
 
@@ -74,10 +74,10 @@ class Student {
         player.index = playerCount;
         player.update();
         player.updateCount(playerCount);
-        this.greeting.html("Hello " + player.name);
+        this.greeting.html("Hola " + player.name);
         this.greeting.position(width / 2 - 70, height / 4);
 
-        this.greeting2.html("Waiting for other players to join ....");
+        this.greeting2.html("Esperando que otros jugadores se unan ....");
         this.greeting2.position(width / 3, height / 3.2);
       }
     });
