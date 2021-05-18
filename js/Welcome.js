@@ -4,8 +4,8 @@ class Welcome {
       "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/logo.png";
     this.logo = createImg(this.logoImage);
 
-    this.teacherButton = createButton("Teacher");
-    this.studentButton = createButton("Student");
+    this.teacherButton = createButton("Profesora");
+    this.studentButton = createButton("Alumno");
   }
 
   hideElements() {
