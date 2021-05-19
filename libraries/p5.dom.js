@@ -2160,27 +2160,27 @@
    * var sampleIsPlaying = false;
    *
    * function setup() {
-   *   //Here we create a p5.MediaElement object
-   *   //using the createAudio() function.
+   *   //Aquí creamos un objeto p5.MediaElement
+   *   //usando la función createAudio().
    *   ele = createAudio('assets/beat.mp3');
    *   background(200);
    *   textAlign(CENTER);
-   *   text('Click to play!', width / 2, height / 2);
-   * }
+   *   text('Clic para reproducir!', width / 2, height / 2);
+   * }	
    *
    * function mouseClicked() {
-   *   //here we test if the mouse is over the
-   *   //canvas element when it's clicked
+   *   //aquí probamos si el ratón está sobre el
+   *   //elemento del lienzo cuando se hace clic
    *   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
    *     background(200);
    *
    *     if (sampleIsPlaying) {
    *       ele.noLoop();
-   *       text('No more Loops!', width / 2, height / 2);
+   *       text('No más bucles!', width / 2, height / 2);
    *     } else {
    *       ele.loop();
    *       sampleIsPlaying = true;
-   *       text('Click to stop looping!', width / 2, height / 2);
+   *       text('Clic para detener el bucle!', width / 2, height / 2);
    *     }
    *   }
    * }
@@ -2193,10 +2193,10 @@
   };
 
   /**
-   * Set HTML5 media element to autoplay or not.
+   * Configura el elemento multimedia HTML5 para que se reproduzca automáticamente o no.
    *
-   * @method autoplay
-   * @param {Boolean} autoplay whether the element should autoplay
+   * @method autoplay - autoreproducción
+   * @param {Boolean} autoplay - si el elemento debe reproducirse automáticamente
    * @return {Object|p5.Element}
    */
   p5.MediaElement.prototype.autoplay = function(val) {
@@ -2205,35 +2205,35 @@
   };
 
   /**
-   * Sets volume for this HTML5 media element. If no argument is given,
-   * returns the current volume.
+   * Establece el volumen de este elemento multimedia HTML5. Si no se proporciona ningún argumento,
+   * devuelve el volumen actual.
    *
-   * @param {Number}            [val] volume between 0.0 and 1.0
-   * @return {Number|p5.MediaElement} current volume or p5.MediaElement
-   * @method volume
+   * @param {Number}            [val] volumen entre 0.0 y 1.0
+   * @return {Number|p5.MediaElement} volumen actual o p5.MediaElement
+   * @method volume - volumen
    *
-   * @example
+   * @example - ejemplo
    * <div><code>
    * var ele;
    * function setup() {
-   *   // p5.MediaElement objects are usually created
-   *   // by calling the createAudio(), createVideo(),
-   *   // and createCapture() functions.
-   *   // In this example we create
-   *   // a new p5.MediaElement via createAudio().
+   *   // Los objetos p5.MediaElement generalmente se crean
+   *   // llamando a las funciones createAudio(), createVideo(),
+   *   // y createCapture().
+   *   // En este ejemplo, creamos un
+   *   // nuevo p5.MediaElement a través de createAudio().
    *   ele = createAudio('assets/lucky_dragons.mp3');
    *   background(250);
    *   textAlign(CENTER);
-   *   text('Click to Play!', width / 2, height / 2);
+   *   text('Clic para reproducir!', width / 2, height / 2);
    * }
    * function mouseClicked() {
-   *   // Here we call the volume() function
-   *   // on the sound element to set its volume
-   *   // Volume must be between 0.0 and 1.0
+   *   // Aquí llamamos a la función volume()
+   *   // en el elemento de sonido para establecer su volumen
+   *   // El volumen debe estar entre 0.0 y 1.0
    *   ele.volume(0.2);
    *   ele.play();
    *   background(200);
-   *   text('You clicked Play!', width / 2, height / 2);
+   *   text('Hiciste clic en Reproducir!', width / 2, height / 2);
    * }
    * </code></div>
    * <div><code>
@@ -2287,30 +2287,30 @@
   };
 
   /**
-   * If no arguments are given, returns the current playback speed of the
-   * element. The speed parameter sets the speed where 2.0 will play the
-   * element twice as fast, 0.5 will play at half the speed, and -1 will play
-   * the element in normal speed in reverse.(Note that not all browsers support
-   * backward playback and even if they do, playback might not be smooth.)
+   * Si no se dan argumentos, devuelve la velocidad de reproducción actual del
+   * elemento. El parámetro de velocidad establece la velocidad en la que 2.0
+   * reproducirá el elemento dos veces más rápido, 0.5 reproducirá a la mitad de la velocidad y
+   * 1 reproducirá el elemento a velocidad normal en reversa.(Ten en cuenta que no todos los navegadores
+   * admiten la reproducción hacia atrás e incluso si lo hacen, es posible que la reproducción no sea fluida).
    *
-   * @method speed
-   * @param {Number} [speed]  speed multiplier for element playback
-   * @return {Number|Object|p5.MediaElement} current playback speed or p5.MediaElement
-   * @example
+   * @method speed - velocidad
+   * @param {Number} [speed]  multiplicador de velocidad para la reproducción de elementos
+   * @return {Number|Object|p5.MediaElement} velocidad de reproducción actual o p5.MediaElement
+   * @example - ejemplo
    * <div class='norender'><code>
-   * //Clicking the canvas will loop
-   * //the audio sample until the user
-   * //clicks again to stop it
+   * //Al hacer clic en el lienzo, la muestra de audio se
+   * //repetirá hasta que el usuario vuelva a hacer
+   * //clic para detenerla.
    *
-   * //We will store the p5.MediaElement
-   * //object in here
+   * //Almacenaremos el objeto
+   * //p5.MediaElement aquí
    * var ele;
    * var button;
    *
    * function setup() {
    *   createCanvas(710, 400);
-   *   //Here we create a p5.MediaElement object
-   *   //using the createAudio() function.
+   *   //Aquí creamos un objeto p5.MediaElement
+   *   //usando la función createAudio().
    *   ele = createAudio('assets/beat.mp3');
    *   ele.loop();
    *   background(200);
@@ -2366,46 +2366,46 @@
   };
 
   /**
-   * If no arguments are given, returns the current time of the element.
-   * If an argument is given the current time of the element is set to it.
+   * Si no se dan argumentos, devuelve el tiempo actual del elemento.
+   * Si se proporciona un argumento, se le asigna el tiempo actual del elemento.
    *
-   * @method time
-   * @param {Number} [time] time to jump to (in seconds)
-   * @return {Number|Object|p5.MediaElement} current time (in seconds)
-   *                                 or p5.MediaElement
-   * @example
+   * @method time - tiempo
+   * @param {Number} [time] tiempo para saltar a (en segundos)
+   * @return {Number|Object|p5.MediaElement} tiempo actual (en segundos)
+   *                                 o p5.MediaElement
+   * @example - ejemplo
    * <div><code>
    * var ele;
    * var beginning = true;
    * function setup() {
-   *   //p5.MediaElement objects are usually created
-   *   //by calling the createAudio(), createVideo(),
-   *   //and createCapture() functions.
+   *   //Los objetos p5.MediaElement generalmente se crean
+   *   //se crean llamando a las funciones createAudio(), 
+   *   //createVideo(), y createCapture().
    *
-   *   //In this example we create
-   *   //a new p5.MediaElement via createAudio().
+   *   //En este ejemplo, creamos un nuevo
+   *   //p5.MediaElement a través de createAudio().
    *   ele = createAudio('assets/lucky_dragons.mp3');
    *   background(250);
    *   textAlign(CENTER);
-   *   text('start at beginning', width / 2, height / 2);
+   *   text('comienza en el inicio', width / 2, height / 2);
    * }
    *
-   * // this function fires with click anywhere
+   * // esta función se activa con un clic en cualquier lugar
    * function mousePressed() {
    *   if (beginning === true) {
-   *     // here we start the sound at the beginning
-   *     // time(0) is not necessary here
-   *     // as this produces the same result as
+   *     // aquí comenzamos el sonido en el
+   *     // tiempo de inicio (0) no es necesario aquí
+   *     // ya que esto produce el mismo resultado que
    *     // play()
    *     ele.play().time(0);
    *     background(200);
-   *     text('jump 2 sec in', width / 2, height / 2);
+   *     text('saltar 2 segundos en', width / 2, height / 2);
    *     beginning = false;
    *   } else {
-   *     // here we jump 2 seconds into the sound
+   *     // aquí saltamos 2 segundos en el sonido
    *     ele.play().time(2);
    *     background(250);
-   *     text('start at beginning', width / 2, height / 2);
+   *     text('comienza en el inicio', width / 2, height / 2);
    *     beginning = true;
    *   }
    * }
@@ -2421,29 +2421,29 @@
   };
 
   /**
-   * Returns the duration of the HTML5 media element.
+   * Devuelve la duración del elemento multimedia HTML5.
    *
-   * @method duration
-   * @return {Number} duration
+   * @method duration - duración
+   * @return {Number} duration - duración
    *
-   * @example
+   * @example - ejemplo
    * <div><code>
    * var ele;
    * function setup() {
-   *   //p5.MediaElement objects are usually created
-   *   //by calling the createAudio(), createVideo(),
-   *   //and createCapture() functions.
-   *   //In this example we create
-   *   //a new p5.MediaElement via createAudio().
+   *   //Los objetos p5.MediaElement generalmente se
+   *   //crean llamando a las funciones createAudio(), createVideo(),
+   *   //y createCapture().
+   *   //En este ejemplo, creamos un
+   *   //nuevo p5.MediaElement a través de createAudio().
    *   ele = createAudio('assets/doorbell.mp3');
    *   background(250);
    *   textAlign(CENTER);
-   *   text('Click to know the duration!', 10, 25, 70, 80);
+   *   text('Clic para conocer la duración!', 10, 25, 70, 80);
    * }
    * function mouseClicked() {
    *   ele.play();
    *   background(200);
-   *   //ele.duration dislpays the duration
+   *   //ele.duration muestra la duración
    *   text(ele.duration() + ' seconds', width / 2, height / 2);
    * }
    * </code></div>
@@ -2458,7 +2458,7 @@
       this.drawingContext = this.canvas.getContext('2d');
     }
     if (this.loadedmetadata) {
-      // wait for metadata for w/h
+      // esperar metadatos para w/h
       if (this.canvas.width !== this.elt.width) {
         this.canvas.width = this.elt.width;
         this.canvas.height = this.elt.height;
@@ -2479,7 +2479,7 @@
   };
   p5.MediaElement.prototype.updatePixels = function(x, y, w, h) {
     if (this.loadedmetadata) {
-      // wait for metadata
+      // esperar metadatos
       p5.Renderer2D.prototype.updatePixels.call(this, x, y, w, h);
     }
     this.setModified(true);
@@ -2487,7 +2487,7 @@
   };
   p5.MediaElement.prototype.get = function(x, y, w, h) {
     if (this.loadedmetadata) {
-      // wait for metadata
+      // esperar metadatos
       return p5.Renderer2D.prototype.get.call(this, x, y, w, h);
     } else if (typeof x === 'undefined') {
       return new p5.Image(1, 1);
@@ -2499,7 +2499,7 @@
   };
   p5.MediaElement.prototype.set = function(x, y, imgOrCol) {
     if (this.loadedmetadata) {
-      // wait for metadata
+      // esperar metadatos
       p5.Renderer2D.prototype.set.call(this, x, y, imgOrCol);
       this.setModified(true);
     }
@@ -2513,45 +2513,45 @@
     p5.Image.prototype.mask.apply(this, arguments);
   };
   /**
-   * helper method for web GL mode to figure out if the element
-   * has been modified and might need to be re-uploaded to texture
-   * memory between frames.
+   * método auxiliar para el modo web GL para determinar si el
+   * elemento se ha modificado y es posible que deba volver a cargarse en
+   * la memoria de texturas entre cuadros.
    * @method isModified
-   * @private
-   * @return {boolean} a boolean indicating whether or not the
-   * image has been updated or modified since last texture upload.
+   * @private - privado
+   * @return {boolean} un booleano que indica si la imagen se ha actualizado o
+   * modificado desde la última carga de textura.
    */
   p5.MediaElement.prototype.isModified = function() {
     return this._modified;
   };
   /**
-   * helper method for web GL mode to indicate that an element has been
-   * changed or unchanged since last upload. gl texture upload will
-   * set this value to false after uploading the texture; or might set
-   * it to true if metadata has become available but there is no actual
-   * texture data available yet..
+   * método auxiliar para el modo web GL para indicar que un elemento se ha
+   * cambiado o no se ha modificado desde la última carga. Cargar la textura gl, establecerá este
+   * valor en falso después de cargar la textura; o puede establecerlo en verdadero si 
+   * los metadatos están disponibles pero aún no hay datos de
+   * texturas reales disponibles.
    * @method setModified
-   * @param {boolean} val sets whether or not the element has been
-   * modified.
-   * @private
+   * @param {boolean} val establece si el elemento ha sido
+   * modificado.
+   * @private - privado
    */
   p5.MediaElement.prototype.setModified = function(value) {
     this._modified = value;
   };
   /**
-   * Schedule an event to be called when the audio or video
-   * element reaches the end. If the element is looping,
-   * this will not be called. The element is passed in
-   * as the argument to the onended callback.
+   * Programe un evento para que se llame cuando el elemento de audio o video
+   * llegue al final. Si el elemento está en bucle, no se llamará.
+   * El elemento se pasa como argumento a la
+   * devolución de llamada finalizada.
    *
-   * @method  onended
-   * @param  {Function} callback function to call when the
-   *                             soundfile has ended. The
-   *                             media element will be passed
-   *                             in as the argument to the
-   *                             callback.
+   * @method  onended - método terminado
+   * @param  {Function} callback función para llamar cuando
+   *                             el archivo de sonido ha terminado. El 
+   *                             elemento multimedia se pasará como argumento 
+   *                             de la devolución de llamada.
+   *                             llamada.
    * @return {Object|p5.MediaElement}
-   * @example
+   * @example - ejemplo 
    * <div><code>
    * function setup() {
    *   var audioEl = createAudio('assets/beat.mp3');
@@ -2569,24 +2569,24 @@
     return this;
   };
 
-  /*** CONNECT TO WEB AUDIO API / p5.sound.js ***/
+  /*** CONECTARSE A LA API DE AUDIO WEB / p5.sound.js ***/
 
   /**
-   * Send the audio output of this element to a specified audioNode or
-   * p5.sound object. If no element is provided, connects to p5's master
-   * output. That connection is established when this method is first called.
-   * All connections are removed by the .disconnect() method.
+   * Envía la salida de audio de este elemento a un objeto audioNode o
+   * p5.sound especificado. Si no se proporciona ningún elemento, se conecta a la 
+   * salida maestra de p5. Esa conexión se establece cuando se llama por primera vez a este método.
+   * Todas las conexiones se eliminan mediante el método .disconnect().
    *
-   * This method is meant to be used with the p5.sound.js addon library.
+   * Este método está destinado a ser utilizado con la biblioteca de complementos p5.sound.js.
    *
-   * @method  connect
-   * @param  {AudioNode|Object} audioNode AudioNode from the Web Audio API,
-   * or an object from the p5.sound library
+   * @method  connect - conectar
+   * @param  {AudioNode|Object} audioNode AudioNode de la API de Web Audio
+   * o un objeto de la biblioteca p5.sound
    */
   p5.MediaElement.prototype.connect = function(obj) {
     var audioContext, masterOutput;
 
-    // if p5.sound exists, same audio context
+    // si existe p5.sound, mismo contexto de audio
     if (typeof p5.prototype.getAudioContext === 'function') {
       audioContext = p5.prototype.getAudioContext();
       masterOutput = p5.soundOut.input;
@@ -2603,11 +2603,11 @@
     if (!this.audioSourceNode) {
       this.audioSourceNode = audioContext.createMediaElementSource(this.elt);
 
-      // connect to master output when this method is first called
+      // conectarse a la salida maestra cuando este método se llama por primera vez
       this.audioSourceNode.connect(masterOutput);
     }
 
-    // connect to object if provided
+    // conectarse al objeto si se proporciona
     if (obj) {
       if (obj.input) {
         this.audioSourceNode.connect(obj.input);
@@ -2615,45 +2615,45 @@
         this.audioSourceNode.connect(obj);
       }
     } else {
-      // otherwise connect to master output of p5.sound / AudioContext
+      // de lo contrario, conéctate a la salida maestra de p5.sound / AudioContext
       this.audioSourceNode.connect(masterOutput);
     }
   };
 
   /**
-   * Disconnect all Web Audio routing, including to master output.
-   * This is useful if you want to re-route the output through
-   * audio effects, for example.
+   * Desconecta todo el enrutamiento de Web Audio, incluida la salida maestra.
+   * Esto es útil si desea redirigir la salida a través de efectos
+   * de audio, por ejemplo.
    *
-   * @method  disconnect
+   * @method  disconnect - desconectar
    */
   p5.MediaElement.prototype.disconnect = function() {
     if (this.audioSourceNode) {
       this.audioSourceNode.disconnect();
     } else {
-      throw 'nothing to disconnect';
+      throw 'nada que desconectar';
     }
   };
 
-  /*** SHOW / HIDE CONTROLS ***/
+  /*** MOSTRAR / OCULTAR CONTROLES ***/
 
   /**
-   * Show the default MediaElement controls, as determined by the web browser.
+   * Muestra los controles MediaElement predeterminados, según lo determinado por el navegador web.
    *
    * @method  showControls
-   * @example
+   * @example - ejemplo 
    * <div><code>
    * var ele;
    * function setup() {
-   *   //p5.MediaElement objects are usually created
-   *   //by calling the createAudio(), createVideo(),
-   *   //and createCapture() functions.
-   *   //In this example we create
-   *   //a new p5.MediaElement via createAudio()
+   *   //Los objetos p5.MediaElement generalmente se crean
+   *   //llamando las funciones createAudio(), createVideo(),
+   *   //y createCapture().
+   *   //En este ejemplo creamos un
+   *   //nuevo p5.MediaElement a través de createAudio()
    *   ele = createAudio('assets/lucky_dragons.mp3');
    *   background(200);
    *   textAlign(CENTER);
-   *   text('Click to Show Controls!', 10, 25, 70, 80);
+   *   text('Clic para mostrar los controles!', 10, 25, 70, 80);
    * }
    * function mousePressed() {
    *   ele.showControls();
@@ -2663,33 +2663,33 @@
    * </code></div>
    */
   p5.MediaElement.prototype.showControls = function() {
-    // must set style for the element to show on the page
+    // debe establecer el estilo para que el elemento se muestre en la página
     this.elt.style['text-align'] = 'inherit';
     this.elt.controls = true;
   };
 
   /**
-   * Hide the default mediaElement controls.
+   * Ocultar los controles de mediaElement predeterminados.
    * @method hideControls
-   * @example
+   * @example - ejemplo 
    * <div><code>
    * var ele;
    * function setup() {
-   *   //p5.MediaElement objects are usually created
-   *   //by calling the createAudio(), createVideo(),
-   *   //and createCapture() functions.
-   *   //In this example we create
-   *   //a new p5.MediaElement via createAudio()
+   *   //Los objetos p5.MediaElement son usualmente creados
+   *   //llamando a las funciones createAudio(), createVideo(),
+   *   //y createCapture().
+   *   //En este ejemplo creamos
+   *   //un nuevo p5.MediaElement a través de createAudio()
    *   ele = createAudio('assets/lucky_dragons.mp3');
    *   ele.showControls();
    *   background(200);
    *   textAlign(CENTER);
-   *   text('Click to hide Controls!', 10, 25, 70, 80);
+   *   text('Clic para esconder los controles!', 10, 25, 70, 80);
    * }
    * function mousePressed() {
    *   ele.hideControls();
    *   background(200);
-   *   text('Controls hidden', width / 2, height / 2);
+   *   text('Controles escondidos', width / 2, height / 2);
    * }
    * </code></div>
    */
@@ -2697,10 +2697,10 @@
     this.elt.controls = false;
   };
 
-  /*** SCHEDULE EVENTS ***/
+  /*** PROGRAMAR EVENTOS ***/
 
-  // Cue inspired by JavaScript setTimeout, and the
-  // Tone.js Transport Timeline Event, MIT License Yotam Mann 2015 tonejs.org
+  // Cue inspirado en JavaScript setTimeout, y el 
+  // Tone.js Transport Timeline Event, Licencia MIT Yotam Mann 2015 tonejs.org
   var Cue = function(callback, time, id, val) {
     this.callback = callback;
     this.time = time;
@@ -2709,33 +2709,33 @@
   };
 
   /**
-   * Schedule events to trigger every time a MediaElement
-   * (audio/video) reaches a playback cue point.
+   * Programa eventos para que se activen cada vez que un MediaElement
+   * (audio / video) alcance un punto de referencia de reproducción.
    *
-   * Accepts a callback function, a time (in seconds) at which to trigger
-   * the callback, and an optional parameter for the callback.
+   * Acepta una función de devolución de llamada, un tiempo (en segundos) en el que se activa
+   * la devolución de llamada y un parámetro opcional para la devolución de llamada.
    *
-   * Time will be passed as the first parameter to the callback function,
-   * and param will be the second parameter.
+   * El tiempo se pasará como primer parámetro a la función de devolución de llamada y
+   * param será el segundo parámetro.
    *
    *
    * @method  addCue
-   * @param {Number}   time     Time in seconds, relative to this media
-   *                             element's playback. For example, to trigger
-   *                             an event every time playback reaches two
-   *                             seconds, pass in the number 2. This will be
-   *                             passed as the first parameter to
-   *                             the callback function.
-   * @param {Function} callback Name of a function that will be
-   *                             called at the given time. The callback will
-   *                             receive time and (optionally) param as its
-   *                             two parameters.
-   * @param {Object} [value]    An object to be passed as the
-   *                             second parameter to the
-   *                             callback function.
+   * @param {Number}   time     Tiempo en segundos, relativo a la reproducción
+   *                             de este elemento multimedia. Por ejemplo, para activar
+   *                             un evento cada vez que la reproducción
+   *                             alcance los dos segundos, pase el número 2.
+   *                             Este se pasará como primer parámetro a la
+   *                             función de devolución de llamada.
+   * @param {Function} callback Nombre de una función que será
+   *                             llamada en el momento dado. La devolución de llamada
+   *                             recibirá time y (opcionalmente) param
+   *                             como sus dos parámetros.
+   * @param {Object} [value]    Un objeto que se pasará como
+   *                             segundo parámetro a la función de
+   *                             devolución de llamada.
    * @return {Number} id ID of this cue,
    *                     useful for removeCue(id)
-   * @example
+   * @example - ejemplo
    * <div><code>
    * function setup() {
    *   background(255, 255, 255);
@@ -2743,7 +2743,7 @@
    *   var audioEl = createAudio('assets/beat.mp3');
    *   audioEl.showControls();
    *
-   *   // schedule three calls to changeBackground
+   *   // programar tres llamadas para cambiar el fondo
    *   audioEl.addCue(0.5, changeBackground, color(255, 0, 0));
    *   audioEl.addCue(1.0, changeBackground, color(0, 255, 0));
    *   audioEl.addCue(2.5, changeBackground, color(0, 0, 255));
@@ -2771,24 +2771,24 @@
   };
 
   /**
-   * Remove a callback based on its ID. The ID is returned by the
-   * addCue method.
+   * Elimina una devolución de llamada en función de su ID.
+   * El ID es devuelto por el método addCue.
    * @method removeCue
-   * @param  {Number} id ID of the cue, as returned by addCue
-   * @example
+   * @param  {Number} id ID de la cue, como lo devuelve addCue
+   * @example - ejemplo
    * <div><code>
    * var audioEl, id1, id2;
    * function setup() {
    *   background(255, 255, 255);
    *   audioEl = createAudio('assets/beat.mp3');
    *   audioEl.showControls();
-   *   // schedule five calls to changeBackground
+   *   // programar cinco llamadas para cambiar el fondo
    *   id1 = audioEl.addCue(0.5, changeBackground, color(255, 0, 0));
    *   audioEl.addCue(1.0, changeBackground, color(0, 255, 0));
    *   audioEl.addCue(2.5, changeBackground, color(0, 0, 255));
    *   audioEl.addCue(3.0, changeBackground, color(0, 255, 255));
    *   id2 = audioEl.addCue(4.2, changeBackground, color(255, 255, 0));
-   *   text('Click to remove first and last Cue!', 10, 25, 70, 80);
+   *   text('Clic para eliminar la primera y la última Cue!', 10, 25, 70, 80);
    * }
    * function mousePressed() {
    *   audioEl.removeCue(id1);
@@ -2813,21 +2813,21 @@
   };
 
   /**
-   * Remove all of the callbacks that had originally been scheduled
-   * via the addCue method.
+   * Elimine todas las devoluciones de llamada que se habían programado originalmente mediante
+   * el método addCue.
    * @method  clearCues
-   * @param  {Number} id ID of the cue, as returned by addCue
-   * @example
+   * @param  {Number} id ID de la cue, como lo devuelve addCue
+   * @example - ejemplo
    * <div><code>
    * var audioEl;
    * function setup() {
    *   background(255, 255, 255);
    *   audioEl = createAudio('assets/beat.mp3');
-   *   //Show the default MediaElement controls, as determined by the web browser
+   *   //Mostrar los controles de MediaElement predeterminados, según lo determinado por el navegador web
    *   audioEl.showControls();
-   *   // schedule calls to changeBackground
+   *   // programar llamadas para cambiar el fondo
    *   background(200);
-   *   text('Click to change Cue!', 10, 25, 70, 80);
+   *   text('Clic para cambiar el Cue!', 10, 25, 70, 80);
    *   audioEl.addCue(0.5, changeBackground, color(255, 0, 0));
    *   audioEl.addCue(1.0, changeBackground, color(0, 255, 0));
    *   audioEl.addCue(2.5, changeBackground, color(0, 0, 255));
@@ -2835,9 +2835,9 @@
    *   audioEl.addCue(4.2, changeBackground, color(255, 255, 0));
    * }
    * function mousePressed() {
-   *   // here we clear the scheduled callbacks
+   *   // aquí borramos las devoluciones de llamada programadas
    *   audioEl.clearCues();
-   *   // then we add some more callbacks
+   *   // luego agregamos algunas devoluciones de llamada más
    *   audioEl.addCue(1, changeBackground, color(2, 2, 2));
    *   audioEl.addCue(3, changeBackground, color(255, 255, 0));
    * }
@@ -2851,8 +2851,8 @@
     this.elt.ontimeupdate = null;
   };
 
-  // private method that checks for cues to be fired if events
-  // have been scheduled using addCue(callback, time).
+  // método privado que comprueba si se activan señales si los eventos se han 
+  // programado utilizando addCue (devolución de llamada, tiempo).
   p5.MediaElement.prototype._onTimeUpdate = function() {
     var playbackTime = this.time();
 
@@ -2861,7 +2861,7 @@
       var val = this._cues[i].val;
 
       if (this._prevTime < callbackTime && callbackTime <= playbackTime) {
-        // pass the scheduled callbackTime as parameter to the callback
+        // pasar el callbackTime programado como parámetro a la devolución de llamada
         this._cues[i].callback(val);
       }
     }
@@ -2874,55 +2874,55 @@
   // =============================================================================
 
   /**
-   * Base class for a file
-   * Using this for createFileInput
+   * Clase base para un archivo
+   * Usando esto para createFileInput
    *
    * @class p5.File
-   * @constructor
-   * @param {File} file File that is wrapped
+   * @constructor - constructor
+   * @param {File} file Archivo envuelto
    */
   p5.File = function(file, pInst) {
     /**
-     * Underlying File object. All normal File methods can be called on this.
+     * Objeto de archivo subyacente. Todos los métodos de archivo normales se pueden llamar en esto.
      *
-     * @property file
+     * @property file - archivo
      */
     this.file = file;
 
     this._pInst = pInst;
 
-    // Splitting out the file type into two components
-    // This makes determining if image or text etc simpler
+    // Dividir el tipo de archivo en dos componentes
+    // Esto simplifica la determinación de si la imagen o el texto, etc.
     var typeList = file.type.split('/');
     /**
-     * File type (image, text, etc.)
+     * Tipo de archivo (imagen, texto, etc.)
      *
-     * @property type
+     * @property type - tipo
      */
     this.type = typeList[0];
     /**
-     * File subtype (usually the file extension jpg, png, xml, etc.)
+     * Subtipo de archivo (usualmente la extensión del archivo es jpg, png, xml, etc.)
      *
-     * @property subtype
+     * @property subtype - subtipo
      */
     this.subtype = typeList[1];
     /**
-     * File name
+     * Nombre del archivo
      *
-     * @property name
+     * @property name - nombre
      */
     this.name = file.name;
     /**
-     * File size
+     * Tamaño del archivo
      *
-     * @property size
+     * @property size - tamaño
      */
     this.size = file.size;
 
     /**
-     * URL string containing image data.
+     *Cadena de URL que contiene datos de imagen.
      *
-     * @property data
+     * @property data - datos
      */
     this.data = undefined;
   };
