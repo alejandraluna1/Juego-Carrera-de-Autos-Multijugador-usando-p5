@@ -3039,7 +3039,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   * sprites sobrepuestos. El parámetro de la función son respectivamente el
   * sprite actual y el sprite colisionado.
   *
-  * @example
+  * @example - ejemplo 
   *     sprite.overlap(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3085,7 +3085,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   * sprites colisionados. El parámetro de la función son respectivamente el
   * sprite actual y el sprite colisionado.
   *
-  * @example
+  * @example - ejemplo 
   *     sprite.collide(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3093,7 +3093,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   *       spriteB.score++;
   *     }
   *
-  * @method collide
+  * @method collide - colisiona 
   * @param {Object} target Sprite o grupo para comparar con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -3116,7 +3116,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   * sprites colisionados. El parámetro de la función son respectivamente el
   * sprite actual y el sprite colisionado.
   *
-  * @example
+  * @example - ejemplo
   *     sprite.displace(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3147,7 +3147,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   * sprites colisionados. El parámetro de la función son respectivamente el
   * sprite actual y el sprite colisionado.
   *
-  * @example
+  * @example - ejemplo 
   *     sprite.bounce(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3155,7 +3155,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   *       spriteB.score++;
   *     }
   *
-  * @method bounce
+  * @method bounce - rebotar 
   * @param {Object} target Sprite o grupo para comparar con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -3178,7 +3178,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   * sprites colisionados. El parámetro de la función son respectivamente el
   * sprite actual y el sprite colisionado.
   *
-  * @example
+  * @example - ejemplo 
   *     sprite.bounceOff(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3186,7 +3186,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   *       spriteB.score++;
   *     }
   *
-  * @method bounceOff
+  * @method bounceOff - rebotar en 
   * @param {Object} target Sprite o grupo para comparar con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -3202,7 +3202,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
    * quadtree para optimizar este último.
    *
    * @method _collideWith
-   * @private
+   * @private - privado 
    * @param {string} type - 'overlap', 'isTouching', 'displace', 'collide',
    *   'bounce' o 'bounceOff'
    * @param {Sprite|Group} target - objetivo
@@ -3252,7 +3252,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
    * colisiones.
    *
    * @method _collideWithOne
-   * @private
+   * @private - privado
    * @param {string} type - 'overlap', 'isTouching', 'displace', 'collide',
    *   'bounce' o 'bounceOff'
    * @param {Sprite} other - otro
@@ -3357,7 +3357,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
         .mult(thisMass * coefficientOfRestitution)
         .add(initialMomentum)
         .div(combinedMass);
-      // Elimine la velocidad antes y aplique la velocidad después a ambos miembros.
+      // Elimina la velocidad antes y aplique la velocidad después a ambos miembros.
       this.velocity.sub(thisInitialVelocity).add(thisFinalVelocity);
       other.velocity.sub(otherInitialVelocity).add(otherFinalVelocity);
     }
@@ -3469,7 +3469,7 @@ defineLazyP5Property('Sprite', boundConstructorFactory(Sprite));
    * de dibujo por ejemplo para dibujar elementos de interface en una posición absoluta.
    *
    * @class Camera - cámara
-   * @constructor
+   * @constructor - constructor
    * @param {Number} x Coordenada x inicial
    * @param {Number} y Coordenada y inicial
    * @param {Number} aumento de zoom
@@ -3478,7 +3478,7 @@ function Camera(pInst, x, y, zoom) {
   /**
   * Posición de la cámara. Define el desplazamiento global del boceto.
   *
-  * @property position
+  * @property position - posición 
   * @type {p5.Vector}
   */
   this.position = pInst.createVector(x, y);
@@ -3553,7 +3553,7 @@ function Camera(pInst, x, y, zoom) {
   * para habilitar o inhabilitar la cámara
 .
   *
-  * @property active - active
+  * @property active - activo
   * @type {Boolean}
   */
   this.active = false;
@@ -3657,8 +3657,8 @@ function cameraPop() {
    * Sprite.remove() también eliminará el sprite de todos los grupos
    * a los que pertenece.
    *
-   * @class Group
-   * @constructor
+   * @class Group - Grupo
+   * @constructor - constructor
    */
 function Group() {
 
@@ -3668,7 +3668,7 @@ function Group() {
   /**
   * Consigue el mimebro de index i.
   *
-  * @method get
+  * @method get - obtener
   * @param {Number} i El índice del objeto a recuperar
   */
   array.get = function(i) {
@@ -3702,7 +3702,7 @@ function Group() {
   /**
   * Agrega un sprite a un grupo.
   *
-  * @method add
+  * @method add - agregar
   * @param {Sprite} s El sprite que se agregará
   */
   array.add = function(s) {
@@ -3718,7 +3718,7 @@ function Group() {
 
   /**
    * Igual que group.length
-   * @method size
+   * @method size - tamaño
    */
   array.size = function() {
     return array.length;
@@ -3740,7 +3740,7 @@ function Group() {
   * Elimina todas las referencias al grupo.
   * No elimina los sprites.
   *
-  * @method clear
+  * @method clear - eliminar
   */
   array.clear = function() {
     array.length = 0;
@@ -3750,7 +3750,7 @@ function Group() {
   * Elimina un sprite del grupo.
   * No elimina el sprite, solo la afiliación (referencia).
   *
-  * @method remove
+  * @method remove - remover
   * @param {Sprite} item El sprite que se eliminará
   * @return {Boolean} Verdadero si se encontró y eliminó el sprite
   */
@@ -3858,7 +3858,7 @@ function Group() {
    * dada. Regresa a verdadero si ocurrió alguna colisión.
    * Uso interno
    *
-   * @private
+   * @private - privado
    * @method _groupCollide
    * @param {!string} escriba uno de 'overlap', 'collide', 'displace', 'bounce' o 'bounceOff'
    * @param {Object} grupo de destino o Sprite
@@ -3883,7 +3883,7 @@ function Group() {
   * El parámetro de la función son respectivamente el
   * miembro del grupo actual y el otro sprite que pasó como parámetro.
   *
-  * @example
+  * @example - ejemplo
   *     group.overlap(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3891,7 +3891,7 @@ function Group() {
   *       spriteB.score++;
   *     }
   *
-  * @method overlap
+  * @method overlap - sobreponer
   * @param {Object} Grupo objetivo o Sprite para compararlo con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -3924,7 +3924,7 @@ function Group() {
   * El parámetro de la función son respectivamente el
   * miembro del grupo actual y el otro sprite que pasó como parámetro.
   *
-  * @example
+  * @example - ejemplo 
   *     group.collide(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3932,7 +3932,7 @@ function Group() {
   *       spriteB.score++;
   *     }
   *
-  * @method collide
+  * @method collide - colisiona
   * @param {Object} Grupo objetivo o Sprite para compararlo con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -3953,7 +3953,7 @@ function Group() {
   * El parámetro de la función son respectivamente el
   * miembro del grupo actual y el otro sprite que pasó como parámetro.
   *
-  * @example
+  * @example - ejemplo
   *     group.displace(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3982,7 +3982,7 @@ function Group() {
   * El parámetro de la función son respectivamente el
   * miembro del grupo actual y el otro sprite que pasó como parámetro.
   *
-  * @example
+  * @example - ejemplo
   *     group.bounce(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -3990,7 +3990,7 @@ function Group() {
   *       spriteB.score++;
   *     }
   *
-  * @method bounce
+  * @method bounce - rebotar
   * @param {Object} Grupo objetivo o Sprite para compararlo con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -4011,7 +4011,7 @@ function Group() {
   * El parámetro de la función son respectivamente el
   * miembro del grupo actual y el otro sprite que pasó como parámetro.
   *
-  * @example
+  * @example - ejemplo
   *     group.bounceOff(otherSprite, explosion);
   *
   *     function explosion(spriteA, spriteB) {
@@ -4019,7 +4019,7 @@ function Group() {
   *       spriteB.score++;
   *     }
   *
-  * @method bounceOff
+  * @method bounceOff - rebotar en 
   * @param {Object} Grupo objetivo o Sprite para compararlo con el actual
   * @param {Function} [callback] La función que se llamará si la superposición es positiva
   * @return {Boolean} Verdadero si se superpone
@@ -4033,9 +4033,9 @@ function Group() {
   };
 
   array.callMethodEach = function(methodName) {
-    // Copie todos los argumentos después del primer parámetro en methodArgs:
+    // Copia todos los argumentos después del primer parámetro en methodArgs:
     var methodArgs = Array.prototype.slice.call(arguments, 1);
-    // Use una copia de la matriz en caso de que el método modifique el grupo
+    // Usa una copia de la matriz en caso de que el método modifique el grupo
     var elements = [].concat(this);
     for (var i = 0; i < elements.length; i++) {
       elements[i][methodName].apply(elements[i], methodArgs);
@@ -4127,7 +4127,7 @@ p5.prototype.createEdgeSprites = function() {
  * "data/file0001.png" and "data/file0005.png" las imágenes
  * "data/file0003.png" and "data/file0004.png" también serán cargadas.
  *
- * @example
+ * @example - ejemplo
  *     var sequenceAnimation;
  *     var glitch;
  *
@@ -4146,11 +4146,11 @@ p5.prototype.createEdgeSprites = function() {
  *       animation(glitch, 200, 100);
  *     }
  *
- * @class Animation
- * @constructor
- * @param {String} fileName1 First file in a sequence OR first image file
- * @param {String} fileName2 Last file in a sequence OR second image file
- * @param {String} [...fileNameN] Any number of image files after the first two
+ * @class Animation - Animación
+ * @constructor - constructor
+ * @param {String} fileName1 Primer archivo de una secuencia O primer archivo de imagen
+ * @param {String} fileName2 Último archivo de una secuencia O segundo archivo de imagen
+ * @param {String} [...fileNameN] Cualquier cantidad de archivos de imagen después de los dos primeros
  */
 function Animation(pInst) {
   var frameArguments = Array.prototype.slice.call(arguments, 1);
@@ -4187,7 +4187,7 @@ function Animation(pInst) {
   /**
   * Verdadero si la animación está reproduciéndose actualmente.
   *
-  * @property playing - jugando
+  * @property playing - reproduciéndose
   * @type {Boolean}
   * @default true
   */
@@ -4196,7 +4196,7 @@ function Animation(pInst) {
   /**
   * Visibilidad de la animación.
   *
-  * @property visible
+  * @property visible - visible
   * @type {Boolean}
   * @default true
   */
@@ -4207,7 +4207,7 @@ function Animation(pInst) {
   *
   * @property looping - bucle
   * @type {Boolean}
-  * @default true
+  * @default true - verdadero
   */
   this.looping = true;
 
@@ -4510,7 +4510,7 @@ function Animation(pInst) {
   /**
   * Reproduce la animación.
   *
-  * @method play
+  * @method play - repoducir
   */
   this.play = function() {
     this.playing = true;
@@ -4520,7 +4520,7 @@ function Animation(pInst) {
   /**
   * Detén la animación.
   *
-  * @method stop
+  * @method stop - detener
   */
   this.stop = function(){
     this.playing = false;
@@ -4529,7 +4529,7 @@ function Animation(pInst) {
   /**
   * Retrocede la animación al primer cuadro.
   *
-  * @method rewind
+  * @method rewind - rebobinar
   */
   this.rewind = function() {
     frame = 0;
@@ -4539,7 +4539,7 @@ function Animation(pInst) {
   * Cambia el cuadro actual.
   *
   * @method changeFrame
-  * @param {Number} frame Frame number (starts from 0).
+  * @param {Number} frame Número de cuadro (comienza desde 0).
   */
   this.changeFrame = function(f) {
     if (f<this.images.length)
@@ -4692,7 +4692,7 @@ defineLazyP5Property('Animation', boundConstructorFactory(Animation));
  *    las dimensiones de cada marco.  Esto es Flexible porque puedes usar
  *    hojas de sprite que no tienen filas y columnos uniformes.
  *
- * @example
+ * @example - ejemplo 
  *     // Método 1: uso de ancho, alto para cada marco y número de marcos
  *     explode_sprite_sheet = loadSpriteSheet('assets/explode_sprite_sheet.png', 171, 158, 11);
  *
@@ -4701,7 +4701,7 @@ defineLazyP5Property('Animation', boundConstructorFactory(Animation));
  *     player_sprite_sheet = loadSpriteSheet('assets/player_spritesheet.png', player_frames);
  *
  * @class SpriteSheet
- * @constructor
+ * @constructor - constructor 
  * @param image - imagen. Ruta de la imagen de cadena u objeto p5.Image
  */
 function SpriteSheet(pInst) {
@@ -4715,7 +4715,7 @@ function SpriteSheet(pInst) {
 
   /**
    * Genera la información de los cuadros para esta hoja de sprite basada en parámetros de usuarios
-   * @private
+   * @private - privado 
    * @method _generateSheetFrames
    */
   this._generateSheetFrames = function() {
@@ -5004,7 +5004,7 @@ Quadtree.prototype.split = function() {
 
 
 /*
-	 * Determine el cuadrante para un área en este nodo
+	 * Determina el cuadrante para un área en este nodo
 	 */
 Quadtree.prototype.getIndex = function( pRect ) {
   if(!pRect.collider)
@@ -5194,7 +5194,7 @@ Quadtree.prototype.removeObject = function( obj ) {
 
 
 /*
-	 * Clear the quadtree and delete all objects
+	 * Limpiar el quadtree y eliminar todos los objetos
 	 */
 Quadtree.prototype.clear = function() {
 
@@ -5260,7 +5260,7 @@ p5.prototype.registerPreloadMethod('loadImageElement', p5.prototype);
  * consola está disponible, este método fallará en silencio.
  * @method _warn
  * @param {!string} mensaje
- * @private
+ * @private - privado
  */
 p5.prototype._warn = function(message) {
   var console = window.console;
@@ -5290,7 +5290,7 @@ p5.prototype._warn = function(message) {
    * Oreas formas deben heredarlo de esto y sobreescribir la mayoría de los métodos.
    *
    * @class p5.CollisionShape
-   * @constructor
+   * @constructor - constructor 
    * @param {p5.Vector} [center] (cero si se omite)
    * @param {number} [rotation] (cero si se omite)
    */
@@ -5301,7 +5301,7 @@ p5.prototype._warn = function(message) {
      * Esto debe permanecer consistente con las propiedades _offset (desplazamiento), _rotation (rotación) y _scale (escala).
      * @property _localTransform
      * @type {p5.Transform2D}
-     * @protected
+     * @protected - protegido
      */
     this._localTransform = new p5.Transform2D();
     if (rotation) {
@@ -5317,14 +5317,14 @@ p5.prototype._warn = function(message) {
      * permanecerá como matriz de identidad.
      * @property _parentTransform
      * @type {p5.Transform2D}
-     * @protected
+     * @protected - protegido 
      */
     this._parentTransform = new p5.Transform2D();
 
     /**
      * El centro de la forma de colisión en espacio mundo.
      * @property _center
-     * @private
+     * @private - privado
      * @type {p5.Vector}
      */
     this._center = new p5.Vector();
@@ -5334,7 +5334,7 @@ p5.prototype._warn = function(message) {
      * centro de la forma de colisión del centro del sprite de su padre.
      * @property _offset
      * @type {p5.Vector}
-     * @private
+     * @private - privado 
      */
     this._offset = new p5.Vector();
 
@@ -5343,7 +5343,7 @@ p5.prototype._warn = function(message) {
      * Ten en cuenta que esto solo tendrá sentido para las formas que pueden rotar,
      * e.j. Cajas Delimitantes Orientadas
      * @property _rotation
-     * @private
+     * @private - privado 
      * @type {number}
      */
     this._rotation = 0;
@@ -5353,7 +5353,7 @@ p5.prototype._warn = function(message) {
      * para formas que tienen dimensiones (e.j. no para colisionadores de punto)
      * @property _scale
      * @type {p5.Vector}
-     * @private
+     * @private - privado 
      */
     this._scale = new p5.Vector(1, 1);
 
@@ -5430,7 +5430,7 @@ p5.prototype._warn = function(message) {
 
       /**
        * La escala del espacio local del colisionador
-       * @property scale
+       * @property scale - escala
        * @type {p5.Vector}
        */
       'scale': {
@@ -5520,7 +5520,7 @@ p5.prototype._warn = function(message) {
    * Calcula los más pequeños movimientos que se necesitan para mover esta forma de colisión fuera
    * otra forma de colisión. Si las formas no se sobreponen, regresa a
    * vector cero para indicar que el desplazamiento no es necesario.
-   * @method collide
+   * @method collide - colisiona 
    * @param {p5.CollisionShape} other - otro
    * @return {p5.Vector}
    */
@@ -5590,8 +5590,8 @@ p5.prototype._warn = function(message) {
 
 
   /**
-   * Compruebe si esta forma se superpone a otra.
-   * @method overlap
+   * Comprueba si esta forma se superpone a otra.
+   * @method overlap - sobreponer
    * @param {p5.CollisionShape} other - otro
    * @return {boolean}
    */
@@ -5602,8 +5602,8 @@ p5.prototype._warn = function(message) {
 
   /**
    * @method _getCanididateAxesForShapes
-   * @private
-   * @static
+   * @private - privado
+   * @static - estático
    * @param {p5.CollisionShape} shape1
    * @param {p5.CollisionShape} shape2
    * @return {Array.<p5.Vector>}
@@ -5638,7 +5638,7 @@ p5.prototype._warn = function(message) {
    * Calcula los ejes de separación candidatos en relación con otro objeto.
    * Sobreescribe este método en las subclases para implimentar un comportamiento de colisión.
    * @method _getCandidateAxes
-   * @protected
+   * @protected - protegido
    * @return {Array.<p5.Vector>}
    */
   p5.CollisionShape.prototype._getCandidateAxes = function() {
@@ -5649,7 +5649,7 @@ p5.prototype._warn = function(message) {
    * Obten el radio de esta forma (la mitad del ancho de su proyección) a lo largo del eje dado.
    * Sobreescribe este método en las subclases para implimentar un comportamiento de colisión.
    * @method _getRadiusOnAxis
-   * @protected
+   * @protected - potegido
    * @param {p5.Vector} axis - eje
    * @return {number}
    */
@@ -5660,7 +5660,7 @@ p5.prototype._warn = function(message) {
   /**
    * Obtenga el radio mínimo de la forma en cualquier eje para controles de túneles.
    * @method _getMinRadius
-   * @protected
+   * @protected - protegido
    * @param {p5.Vector} axis - eje
    * @return {number}
    */
@@ -5671,24 +5671,24 @@ p5.prototype._warn = function(message) {
   /**
    * @property X_AXIS
    * @type {p5.Vector}
-   * @static
-   * @final
+   * @static - estático
+   * @final - final
    */
   p5.CollisionShape.X_AXIS = new p5.Vector(1, 0);
 
   /**
    * @property Y_AXIS
    * @type {p5.Vector}
-   * @static
-   * @final
+   * @static - estático
+   * @final - final
    */
   p5.CollisionShape.Y_AXIS = new p5.Vector(0, 1);
 
   /**
    * @property WORLD_AXES
    * @type {Array.<p5.Vector>}
-   * @static
-   * @final
+   * @static - estático
+   * @final - final
    */
   p5.CollisionShape.WORLD_AXES = [
     p5.CollisionShape.X_AXIS,
@@ -5718,7 +5718,7 @@ p5.prototype._warn = function(message) {
    * Una forma de colisión de punto, utilizado para detectar sobreposición y desplazamiento de vectores
    * en comparación con otras formas de colisión.
    * @class p5.PointCollider
-   * @constructor
+   * @constructor - constructor
    * @extends p5.CollisionShape
    * @param {p5.Vector} center - centro
    */
@@ -5730,7 +5730,7 @@ p5.prototype._warn = function(message) {
   /**
    * Construye un nuevo PointCollider con el desplazamiento dado para el sprite dado.
    * @method createFromSprite
-   * @static
+   * @static - estático
    * @param {Sprite} sprite
    * @param {p5.Vector} [offset] desde el centro del sprite
    * @return {p5.PointCollider}
@@ -5761,7 +5761,7 @@ p5.prototype._warn = function(message) {
    * Una forma de colisión circular, utilizada para detectar sobreposición y desplazamiento de vectores
    * con otras formas de colisión.
    * @class p5.CircleCollider
-   * @constructor
+   * @constructor - constructor
    * @extends p5.CollisionShape
    * @param {p5.Vector} center - centro
    * @param {number} radius - radio
@@ -5781,7 +5781,7 @@ p5.prototype._warn = function(message) {
      * almacenado en caché para que no lo recalculemos todo el tiempo.
      * @property _scaledRadius
      * @type {number}
-     * @private
+     * @private - privado
      */
     this._scaledRadius = 0;
 
@@ -5792,7 +5792,7 @@ p5.prototype._warn = function(message) {
   /**
    * Construye un nuevo CircleCollider con el desplazamiento dado para el sprite dado.
    * @method createFromSprite
-   * @static
+   * @static - estático 
    * @param {Sprite} sprite
    * @param {p5.Vector} [offset] desde el centro del sprite
    * @param {number} [radius]
@@ -5832,7 +5832,7 @@ p5.prototype._warn = function(message) {
    * solo necesita recalcular el centro de la forma, pero otras formas pueden necesitar
    * sobreescribir este método y hacer recálculos adicionales.
    * @method _onTransformChanged
-   * @protected
+   * @protected - protegido
    */
   p5.CircleCollider.prototype._onTransformChanged = function() {
     p5.CollisionShape.prototype._onTransformChanged.call(this);
@@ -5842,7 +5842,7 @@ p5.prototype._warn = function(message) {
   /**
    * Llama para actualizar el valor del radio escalado en caché.
    * @method _computeScaledRadius
-   * @private
+   * @private - privado 
    */
   p5.CircleCollider.prototype._computeScaledRadius = function() {
     this._scaledRadius = new p5.Vector(this.radius, 0)
@@ -5854,7 +5854,7 @@ p5.prototype._warn = function(message) {
 
   /**
    * Depurar dibujar esta forma de colisión.
-   * @method draw
+   * @method draw - dibujar
    * @param {p5} instancia sketch que se utilizará para dibujar
    */
   p5.CircleCollider.prototype.draw = function(sketch) {
@@ -5895,7 +5895,7 @@ p5.prototype._warn = function(message) {
   /**
    * Calcular el eje de separación candidato con relación a otro objeto.
    * @method _getCandidateAxes
-   * @protected
+   * @protected - protegido 
    * @param {p5.CollisionShape} other - otro
    * @return {Array.<p5.Vector>}
    */
@@ -5944,7 +5944,7 @@ p5.prototype._warn = function(message) {
   /**
    * Obtén el radio de esta forma (mitad del ancho de su proyección) junto con el eje dado.
    * @method _getRadiusOnAxis
-   * @protected
+   * @protected - protegido 
    * @return {number}
    */
   p5.CircleCollider.prototype._getRadiusOnAxis = function() {
@@ -5954,7 +5954,7 @@ p5.prototype._warn = function(message) {
   /**
    * Obtén el radio minimo de la forma en cualquier eje para revisión de tunelización.
    * @method _getMinRadius
-   * @protected
+   * @protected - protegido
    * @param {p5.Vector} axis - eje
    * @return {number}
    */
@@ -5982,7 +5982,7 @@ p5.prototype._warn = function(message) {
     /**
      * Ancho de caja sin escala.
      * @property _width
-     * @private
+     * @private - privado 
      * @type {number}
      */
     this._width = width;
@@ -5990,7 +5990,7 @@ p5.prototype._warn = function(message) {
     /**
      * Altura de la caja sin escalar.
      * @property _width
-     * @private
+     * @private - privado
      * @type {number}
      */
     this._height = height;
