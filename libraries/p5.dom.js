@@ -1,23 +1,23 @@
 /*! p5.dom.js v0.3.4 Jan 19, 2017 */
 /**
- * <p>The web is much more than just canvas and p5.dom makes it easy to interact
- * with other HTML5 objects, including text, hyperlink, image, input, video,
- * audio, and webcam.</p>
- * <p>There is a set of creation methods, DOM manipulation methods, and
- * an extended p5.Element that supports a range of HTML elements. See the
+ * <p>La web es mucho más que un lienzo y p5.dom facilita la interacción
+ * con otros objetos HTML5, incluidos texto, hipervínculo, imagen, entrada, video,
+ * audio y cámara web. </p>
+ * <p>Existe un conjunto de métodos de creación, métodos de manipulación DOM y
+ * un p5.Element extendido que admite una variedad de elementos HTML. Ver 
  * <a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>
- * beyond the canvas tutorial</a> for a full overview of how this addon works.
+ * más allá del tutorial de lienzo </a> para obtener una descripción general completa de cómo funciona este complemento.
  *
- * <p>Methods and properties shown in black are part of the p5.js core, items in
- * blue are part of the p5.dom library. You will need to include an extra file
- * in order to access the blue functions. See the
+ * <p> Los métodos y propiedades que se muestran en negro son parte del núcleo de p5.js, los elementos en
+ * azul son parte de la biblioteca p5.dom. Deberá incluir un archivo adicional
+ * para acceder a las funciones azules. Ver la
  * <a href='http://p5js.org/libraries/#using-a-library'>using a library</a>
- * section for information on how to include this library. p5.dom comes with
- * <a href='http://p5js.org/download'>p5 complete</a> or you can download the single file
+ * sección para obtener información sobre cómo incluir esta biblioteca. p5.dom viene con
+ * <a href='http://p5js.org/download'>p5 complete</a> o puedes descargar el archivo único
  * <a href='https://raw.githubusercontent.com/lmccart/p5.js/master/lib/addons/p5.dom.js'>
- * here</a>.</p>
- * <p>See <a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>tutorial: beyond the canvas</a>
- * for more info on how to use this libary.</a>
+ * aquí</a>.</p>
+ * <p>Mira el <a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>tutorial: más allá del lienzo</a>
+ * para obtener más información sobre cómo utilizar esta biblioteca.</a>
  *
  * @module p5.dom
  * @submodule p5.dom
@@ -34,37 +34,37 @@
   else factory(root['p5']);
 })(this, function(p5) {
   // =============================================================================
-  //                         p5 additions
+  //                         adiciones p5 
   // =============================================================================
 
   /**
-   * Searches the page for an element with the given ID, class, or tag name (using the '#' or '.'
-   * prefixes to specify an ID or class respectively, and none for a tag) and returns it as
-   * a p5.Element. If a class or tag name is given with more than 1 element,
-   * only the first element will be returned.
-   * The DOM node itself can be accessed with .elt.
-   * Returns null if none found. You can also specify a container to search within.
+   * Busca en la página un elemento con el ID, la clase o el nombre de etiqueta indicados (utilizando el '#' o los '.'
+   * prefijos para especificar un ID o clase respectivamente, y ninguno para una etiqueta) y lo devuelve como
+   * un elemento p5. Si se proporciona un nombre de clase o etiqueta con más de 1 elemento,
+   * solo se devolverá el primer elemento.
+   * Se puede acceder al nodo DOM en sí con .elt.
+   * Devuelve nulo si no se encuentra ninguno. También puedes especificar un contenedor para buscar dentro.
    *
-   * @method select
-   * @param  {String} name id, class, or tag name of element to search for
-   * @param  {String} [container] id, p5.Element, or HTML element to search within
-   * @return {Object|p5.Element|Null} p5.Element containing node found
-   * @example
+   * @method select - seleccionar
+   * @param  {String} nombre id, clase o etiqueta nombre del elemento para buscar
+   * @param  {String} [container] id, p5.Element, o elemento HTML para buscar dentro
+   * @return {Object|p5.Element|Null} p5.Elemento que contiene el nodo encontrado
+   * @example - ejemplo
    * <div ><code class='norender'>
    * function setup() {
    *   createCanvas(100, 100);
-   *   //translates canvas 50px down
+   *   //lleva al lienzo 50px hacia abajo
    *   select('canvas').position(100, 100);
    * }
    * </code></div>
    * <div ><code class='norender'>
-   * // these are all valid calls to select()
+   * // estas son todas llamadas válidas para select()
    * var a = select('#moo');
    * var b = select('#blah', '#myContainer');
    * var c = select('#foo', b);
    * var d = document.getElementById('beep');
    * var e = select('p', d);
-   * [a, b, c, d, e]; // unused
+   * [a, b, c, d, e]; // No utilizado
    * </code></div>
    *
    */
@@ -99,17 +99,17 @@
   };
 
   /**
-   * Searches the page for elements with the given class or tag name (using the '.' prefix
-   * to specify a class and no prefix for a tag) and returns them as p5.Elements
-   * in an array.
-   * The DOM node itself can be accessed with .elt.
-   * Returns an empty array if none found.
-   * You can also specify a container to search within.
+   * Busca en la página elementos con la clase dada o el nombre de etiqueta (usando el prefijo '.'
+   * para especificar una clase y ningún prefijo para una etiqueta) y los devuelve como p5.Elements
+   * en una matriz.
+   * Se puede acceder al nodo DOM en sí con .elt.
+   * Devuelve una matriz vacía si no se encuentra ninguna.
+   * También puedes especificar un contenedor para buscar dentro.
    *
-   * @method selectAll
-   * @param  {String} name class or tag name of elements to search for
-   * @param  {String} [container] id, p5.Element, or HTML element to search within
-   * @return {Array} Array of p5.Elements containing nodes found
+   * @method selectAll - seleccionar todo
+   * @param  {String} nombre de clase o etiqueta nombre de los elementos a buscar
+   * @param  {String} [container] id, p5.Element, o elemento HTML para buscar dentro
+   * @return {Array} Matriz de elementos p5 que contienen nodos encontrados
    * @example
    * <div class='norender'><code>
    * function setup() {
@@ -124,7 +124,7 @@
    * }
    * </code></div>
    * <div class='norender'><code>
-   * // these are all valid calls to selectAll()
+   * // estas son todas llamadas válidas para select()
    * var a = selectAll('.moo');
    * a = selectAll('div');
    * a = selectAll('button', '#myContainer');
@@ -135,7 +135,7 @@
    * var f = document.getElementById('beep');
    * a = select('.blah', f);
    *
-   * a; // unused
+   * a; // No utilizado
    * </code></div>
    *
    */
@@ -160,7 +160,7 @@
   };
 
   /**
-   * Helper function for select and selectAll
+   * Función auxiliar para select y selectAll
    */
   function getContainer(p) {
     var container = document;
@@ -176,7 +176,7 @@
   }
 
   /**
-   * Helper function for getElement and getElements.
+   * Función auxiliar para getElement y getElements.
    */
   p5.prototype._wrapElement = function(elt) {
     var children = Array.prototype.slice.call(elt.children);
@@ -210,19 +210,19 @@
   };
 
   /**
-   * Removes all elements created by p5, except any canvas / graphics
-   * elements created by createCanvas or createGraphics.
-   * Event handlers are removed, and element is removed from the DOM.
-   * @method removeElements
+   * Elimina todos los elementos creados por p5, excepto cualquier elemento
+   * lienzo / gráfico creados por createCanvas o createGraphics.
+   * Los controladores de eventos se eliminan y el elemento se elimina del DOM.
+   * @method removeElements - eliminar elementos
    * @example
    * <div class='norender'><code>
    * function setup() {
    *   createCanvas(100, 100);
-   *   createDiv('this is some text');
-   *   createP('this is a paragraph');
+   *   createDiv('este es un texto');
+   *   createP('esto es un párrafo');
    * }
    * function mousePressed() {
-   *   removeElements(); // this will remove the div and p, not canvas
+   *   removeElements(); // esto eliminará el div y p, no el lienzo
    * }
    * </code></div>
    *
@@ -237,7 +237,7 @@
   };
 
   /**
-   * Helpers for create methods.
+   * Ayudantes para crear métodos.
    */
   function addElement(elt, pInst, media) {
     var node = pInst._userNode ? pInst._userNode : document.body;
@@ -248,45 +248,45 @@
   }
 
   /**
-   * Creates a &lt;div&gt;&lt;/div&gt; element in the DOM with given inner HTML.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea un & lt; div & gt; & lt; / div & gt; elemento en el DOM con HTML interno dado.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createDiv
-   * @param  {String} [html] inner HTML for element created
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} [html] HTML interno para el elemento creado
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
-   * createDiv('this is some text');
+   * createDiv('este es un texto');
    * </code></div>
    */
 
   /**
-   * Creates a &lt;p&gt;&lt;/p&gt; element in the DOM with given inner HTML. Used
-   * for paragraph length text.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea un & lt; p & gt; & lt; / p & gt; elemento en el DOM con HTML interno dado. Usado
+   * para la longitud del texto del párrafo.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createP
-   * @param  {String} [html] inner HTML for element created
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} [html] HTML interno para el elemento creado
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
-   * createP('this is some text');
+   * createP('este es un texto');
    * </code></div>
    */
 
   /**
-   * Creates a &lt;span&gt;&lt;/span&gt; element in the DOM with given inner HTML.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea una etiqueta & lt; span & gt; & lt; / span & gt; elemento en el DOM con HTML interno dado.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createSpan
-   * @param  {String} [html] inner HTML for element created
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} [html] HTML interno para el elemento creado
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
-   * createSpan('this is some text');
+   * createSpan('este es un texto');
    * </code></div>
    */
   var tags = ['div', 'p', 'span'];
@@ -300,16 +300,16 @@
   });
 
   /**
-   * Creates an &lt;img&gt; element in the DOM with given src and
-   * alternate text.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea una etiqueta & lt; img & gt; elemento en el DOM con src dado y
+   * texto alternativo.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createImg
-   * @param  {String} src src path or url for image
-   * @param  {String} [alt] alternate text to be used if image does not load
-   * @param  {Function} [successCallback] callback to be called once image data is loaded
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} src src ruta o URL para la imagen
+   * @param  {String} [alt] texto alternativo que se utilizará si la imagen no se carga
+   * @param  {Function} [successCallback] devolución de llamada que se llamará una vez que se carguen los datos de imagen
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
    * createImg('http://p5js.org/img/asterisk-01.png');
@@ -343,19 +343,19 @@
   };
 
   /**
-   * Creates an &lt;a&gt;&lt;/a&gt; element in the DOM for including a hyperlink.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea una etiqueta & lt; a & gt; & lt; / a & gt; elemento en el DOM para incluir un hipervínculo.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createA
-   * @param  {String} href       url of page to link to
-   * @param  {String} html       inner html of link element to display
-   * @param  {String} [target]   target where new link should open,
-   *                             could be _blank, _self, _parent, _top.
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} href       URL de la página a la que enlazar
+   * @param  {String} html       html interno del elemento de enlace para mostrar
+   * @param  {String} [target]   apuntar donde debería abrirse el nuevo enlace,
+   *                             puede ser _blank, _self, _parent, _top.
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
-   * createA('http://p5js.org/', 'this is a link');
+   * createA('http://p5js.org/', 'este es un enlace');
    * </code></div>
    */
   p5.prototype.createA = function(href, html, target) {
@@ -367,20 +367,20 @@
     return addElement(elt, this);
   };
 
-  /** INPUT **/
+  /** ENTRADA **/
 
   /**
-   * Creates a slider &lt;input&gt;&lt;/input&gt; element in the DOM.
-   * Use .size() to set the display length of the slider.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea un control deslizante & lt; input & gt; & lt; / input & gt; elemento en el DOM.
+   * Utiliza .size () para establecer la longitud de visualización del control deslizante.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createSlider
-   * @param  {Number} min minimum value of the slider
-   * @param  {Number} max maximum value of the slider
-   * @param  {Number} [value] default value of the slider
-   * @param  {Number} [step] step size for each tick of the slider (if step is set to 0, the slider will move continuously from the minimum to the maximum value)
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {Number} min valor mínimo del control deslizante
+   * @param  {Number} max valor máximo del control deslizante
+   * @param  {Number} [value] valor predeterminado del control deslizante
+   * @param  {Number} [step] tamaño de paso para cada marca del control deslizante (si el paso se establece en 0, el control deslizante se moverá continuamente desde el valor mínimo al máximo)
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div><code>
    * var slider;
@@ -418,7 +418,7 @@
     elt.min = min;
     elt.max = max;
     if (step === 0) {
-      elt.step = 0.000000000000000001; // smallest valid step
+      elt.step = 0.000000000000000001; // paso válido más pequeño
     } else if (step) {
       elt.step = step;
     }
@@ -427,23 +427,23 @@
   };
 
   /**
-   * Creates a &lt;button&gt;&lt;/button&gt; element in the DOM.
-   * Use .size() to set the display size of the button.
-   * Use .mousePressed() to specify behavior on press.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea un & lt; button & gt; & lt; / button & gt; elemento en el DOM.
+   * Usa .size() para establecer el tamaño de visualización del botón.
+   * Usa .mousePressed() para especificar el comportamiento de la presión.
+   * Se agrega al nodo contenedor si se especifica uno; de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createButton
-   * @param  {String} label label displayed on the button
-   * @param  {String} [value] value of the button
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} label etiqueta que se muestra en el botón
+   * @param  {String} [value] valor del botón
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
    * var button;
    * function setup() {
    *   createCanvas(100, 100);
    *   background(0);
-   *   button = createButton('click me');
+   *   button = createButton('Haz clic en mi');
    *   button.position(19, 19);
    *   button.mousePressed(changeBG);
    * }
@@ -463,13 +463,13 @@
   };
 
   /**
-   * Creates a checkbox &lt;input&gt;&lt;/input&gt; element in the DOM.
-   * Calling .checked() on a checkbox returns if it is checked or not
+   * Crea una casilla de verificación & lt; input & gt; & lt; / input & gt; elemento en el DOM.
+   * Llamar .checked () en una casilla de verificación devuelve si está marcado o no
    *
    * @method createCheckbox
-   * @param  {String} [label] label displayed after checkbox
-   * @param  {boolean} [value] value of the checkbox; checked is true, unchecked is false
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} [label] etiqueta mostrada después de la casilla de verificación
+   * @param  {boolean} [value] valor de la casilla de verificación; marcado es verdadero, desmarcado es falso
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
    * var checkbox;
@@ -481,9 +481,9 @@
    *
    * function myCheckedEvent() {
    *   if (this.checked()) {
-   *     console.log('Checking!');
+   *     console.log('¡Comprobar!');
    *   } else {
-   *     console.log('Unchecking!');
+   *     console.log('¡Sin Comprobar!');
    *   }
    * }
    * </code></div>
@@ -494,7 +494,7 @@
     var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     elt.appendChild(checkbox);
-    //checkbox must be wrapped in p5.Element before label so that label appears after
+    // La casilla de verificación debe estar envuelta en p5.Element antes de la etiqueta para que la etiqueta aparezca después
     var self = addElement(elt, this);
     self.checked = function() {
       var cb = self.elt.getElementsByTagName('input')[0];
@@ -531,10 +531,10 @@
   };
 
   /**
-   * Creates a dropdown menu &lt;select&gt;&lt;/select&gt; element in the DOM.
-   * It also helps to assign select-box methods to p5.Element when selecting existing select box
+   * Crea un menú desplegable & lt; select & gt; & lt; / select & gt; elemento en el DOM.
+   * También ayuda a asignar métodos de cuadro de selección a p5.Element al seleccionar cuadro de selección existente
    * @method createSelect
-   * @param {boolean} [multiple] true if dropdown should support multiple selections
+   * @param {boolean} [multiple] verdadero si el menú desplegable debe admitir múltiples selecciones
    * @return {p5.Element}
    * @example
    * <div><code>
@@ -554,13 +554,13 @@
    * function mySelectEvent() {
    *   var item = sel.value();
    *   background(200);
-   *   text('it is a' + item + '!', 50, 50);
+   *   text('este es un' + item + '!', 50, 50);
    * }
    * </code></div>
    */
   /**
    * @method createSelect
-   * @param {Object} existing DOM select element
+   * @param {Object} elemento de selección DOM existente
    * @return {p5.Element}
    */
 
@@ -580,29 +580,29 @@
     }
     self.option = function(name, value) {
       var index;
-      //see if there is already an option with this name
+      //mira si ya hay una opción con este nombre
       for (var i = 0; i < this.elt.length; i++) {
         if (this.elt[i].innerHTML === name) {
           index = i;
           break;
         }
       }
-      //if there is an option with this name we will modify it
+      //si hay una opción con este nombre la modificaremos
       if (index !== undefined) {
-        //if the user passed in false then delete that option
+        //si el usuario pasó en falso, elimina esa opción
         if (value === false) {
           this.elt.remove(index);
         } else {
-          //otherwise if the name and value are the same then change both
+          //de lo contrario, si el nombre y el valor son iguales, cambia ambos
           if (this.elt[index].innerHTML === this.elt[index].value) {
             this.elt[index].innerHTML = this.elt[index].value = value;
-            //otherwise just change the value
+            //de lo contrario, solo cambia el valor
           } else {
             this.elt[index].value = value;
           }
         }
       } else {
-        //if it doesn't exist make it
+        //si no existe hazlo
         var opt = document.createElement('option');
         opt.innerHTML = name;
         if (arguments.length > 1) opt.value = value;
@@ -635,13 +635,13 @@
   };
 
   /**
-   * Creates a radio button &lt;input&gt;&lt;/input&gt; element in the DOM.
-   * The .option() method can be used to set options for the radio after it is
-   * created. The .value() method will return the currently selected option.
+   * Crea un botón de opción & lt; input & gt; & lt; / input & gt; elemento en el DOM.
+   * El método .option () se puede utilizar para configurar opciones para la radio después de que es
+   * creado. El método .value () devolverá la opción seleccionada actualmente.
    *
    * @method createRadio
-   * @param  {String} [divId] the id and name of the created div and input field respectively
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param  {String} [divId] la identificación y el nombre del campo de entrada y div creado respectivamente
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div><code>
    * var radio;
@@ -678,14 +678,14 @@
    *   background(200);
    *   var val = radio.value();
    *   if (val) {
-   *     text('item cost is $' + val, width / 2, height / 2);
+   *     text('el costo del artículo es $' + val, width / 2, height / 2);
    *   }
    * }
    * </code></div>
    */
   p5.prototype.createRadio = function(existing_radios) {
     p5._validateParameters('createRadio', arguments);
-    // do some prep by counting number of radios on page
+    // haz algo de preparación contando el número de radios en la página
     var radios = document.querySelectorAll('input[type=radio]');
     var count = 0;
     if (radios.length > 1) {
@@ -703,18 +703,18 @@
     } else if (radios.length === 1) {
       count = 1;
     }
-    // see if we got an existing set of radios from callee
+    // mira si tenemos un conjunto existente de radios de callee
     var elt, self;
     if (typeof existing_radios === 'object') {
-      // use existing elements
+      // usa elementos existentes
       self = existing_radios;
       elt = this.elt = existing_radios.elt;
     } else {
-      // create a set of radio buttons
+      // crea un conjunto de botones de radio
       elt = document.createElement('div');
       self = addElement(elt, this);
     }
-    // setup member functions
+    // configurar funciones de miembros
     self._getInputChildrenArray = function() {
       return Array.prototype.slice.call(this.elt.children).filter(function(c) {
         return c.tagName === 'INPUT';
@@ -773,15 +773,15 @@
   };
 
   /**
-   * Creates an &lt;input&gt;&lt;/input&gt; element in the DOM for text input.
-   * Use .size() to set the display length of the box.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea una etiqueta & lt; input & gt; & lt; / input & gt; elemento en el DOM para la entrada de texto.
+   * Utiliza .size () para establecer la longitud de visualización del cuadro.
+   * Se agrega al nodo contenedor si se especifica uno, de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createInput
-   * @param {String} [value] default value of the input box
-   * @param {String} [type] type of text, ie text, password etc. Defaults to text
-   * @return {Object|p5.Element} pointer to p5.Element holding created node
+   * @param {String} [value] valor predeterminado del cuadro de entrada
+   * @param {String} [type] tipo de texto, es decir, texto, contraseña, etc. Por defecto es texto
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el nodo creado
    * @example
    * <div class='norender'><code>
    * function setup() {
@@ -790,7 +790,7 @@
    * }
    *
    * function myInputEvent() {
-   *   console.log('you are typing: ', this.value());
+   *   console.log('estás escribiendo: ', this.value());
    * }
    * </code></div>
    */
@@ -803,13 +803,13 @@
   };
 
   /**
-   * Creates an &lt;input&gt;&lt;/input&gt; element in the DOM of type 'file'.
-   * This allows users to select local files for use in a sketch.
+   * Crea una etiqueta & lt; input & gt; & lt; / input & gt; elemento en el DOM de tipo 'archivo'.
+   * Esto permite a los usuarios seleccionar archivos locales para usarlos en un boceto.
    *
    * @method createFileInput
-   * @param  {Function} [callback] callback function for when a file loaded
-   * @param  {String} [multiple] optional to allow multiple files selected
-   * @return {Object|p5.Element} pointer to p5.Element holding created DOM element
+   * @param  {Function} [callback] función de devolución de llamada para cuando se carga un archivo
+   * @param  {String} [multiple] opcional para permitir varios archivos seleccionados
+   * @return {Object|p5.Element} puntero a p5.Element que contiene el elemento DOM creado
    * @example
    * var input;
    * var img;
@@ -835,29 +835,29 @@
    */
   p5.prototype.createFileInput = function(callback, multiple) {
     p5._validateParameters('createFileInput', arguments);
-    // Function to handle when a file is selected
-    // We're simplifying life and assuming that we always
-    // want to load every selected file
+    // Función para manejar cuando se selecciona un archivo
+    // Estamos simplificando la vida y asumiendo que siempre
+    // queremos cargar cada archivo seleccionado
     function handleFileSelect(evt) {
       function makeLoader(theFile) {
-        // Making a p5.File object
+        // Hacer un objeto p5.File
         var p5file = new p5.File(theFile);
         return function(e) {
           p5file.data = e.target.result;
           callback(p5file);
         };
       }
-      // These are the files
+      // Estos son los archivos
       var files = evt.target.files;
-      // Load each one and trigger a callback
+      // Carga cada uno y activa una devolución de llamada
       for (var i = 0; i < files.length; i++) {
         var f = files[i];
         var reader = new FileReader();
 
         reader.onload = makeLoader(f);
 
-        // Text or data?
-        // This should likely be improved
+        // ¿Texto o datos?
+        // Esto probablemente debería mejorarse
         if (f.type.indexOf('text') > -1) {
           reader.readAsText(f);
         } else {
@@ -865,35 +865,35 @@
         }
       }
     }
-    // Is the file stuff supported?
+    // ¿El material del archivo es compatible?
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-      // Yup, we're ok and make an input file selector
+      // Sí, estamos bien y hacemos un selector de archivos de entrada
       var elt = document.createElement('input');
       elt.type = 'file';
 
-      // If we get a second argument that evaluates to true
-      // then we are looking for multiple files
+      // Si obtenemos un segundo argumento que se evalúa como verdadero
+      // entonces buscamos varios archivos
       if (multiple) {
-        // Anything gets the job done
+        // Cualquier cosa hace el trabajo
         elt.multiple = 'multiple';
       }
 
-      // Now let's handle when a file was selected
+      // Ahora manejemos cuando se seleccionó un archivo
       elt.addEventListener('change', handleFileSelect, false);
       return addElement(elt, this);
     } else {
       console.log(
-        'The File APIs are not fully supported in this browser. Cannot create element.'
+        'Las API de archivos no son totalmente compatibles con este navegador. No se puede crear el elementot.'
       );
     }
   };
 
-  /** VIDEO STUFF **/
+  /** COSAS PARA VIDEO **/
 
   function createMedia(pInst, type, src, callback) {
     var elt = document.createElement(type);
 
-    // allow src to be empty
+    // Permitir que src esté vacío
     src = src || '';
     if (typeof src === 'string') {
       src = [src];
@@ -913,11 +913,11 @@
 
     var c = addElement(elt, pInst, true);
     c.loadedmetadata = false;
-    // set width and height onload metadata
+    // establecer metadatos de carga de ancho y alto
     elt.addEventListener('loadedmetadata', function() {
       c.width = elt.videoWidth;
       c.height = elt.videoHeight;
-      // set elt width and height if not set
+      // establezca el ancho y la altura del elt si no está establecido
       if (c.elt.width === 0) c.elt.width = elt.videoWidth;
       if (c.elt.height === 0) c.elt.height = elt.videoHeight;
       c.loadedmetadata = true;
@@ -926,26 +926,26 @@
     return c;
   }
   /**
-   * Creates an HTML5 &lt;video&gt; element in the DOM for simple playback
-   * of audio/video. Shown by default, can be hidden with .hide()
-   * and drawn into canvas using video(). Appends to the container
-   * node if one is specified, otherwise appends to body. The first parameter
-   * can be either a single string path to a video file, or an array of string
-   * paths to different formats of the same video. This is useful for ensuring
-   * that your video can play across different browsers, as each supports
-   * different formats. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>this
-   * page</a> for further information about supported formats.
+   * Crea una etiqueta HTML5 & lt; video & gt; elemento en el DOM para una reproducción simple
+   * de audio / video. Se muestra de forma predeterminada, se puede ocultar con .hide ()
+   * y dibujado en lienzo usando video (). Anexa al contenedor
+   * nodo si se especifica uno; de lo contrario, se agrega al cuerpo. El primer parámetro
+   * cpuede ser una ruta de una sola cadena a un archivo de video o una matriz de cadenas
+   * rutas a diferentes formatos del mismo video. Esto es útil para asegurar
+   * que su video puede reproducirse en diferentes navegadores, ya que cada uno admite
+   * diferentes formatos. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>this
+   * page</a> para obtener más información sobre los formatos compatibles.
    *
    * @method createVideo
-   * @param  {String|Array} src  path to a video file, or array of paths for
-   *                             supporting different browsers
-   * @param  {Object} [callback] callback function to be called upon
-   *                             'canplaythrough' event fire, that is, when the
-   *                             browser can play the media, and estimates that
-   *                             enough data has been loaded to play the media
-   *                             up to its end without having to stop for
-   *                             further buffering of content
-   * @return {p5.MediaElement|p5.Element} pointer to video p5.Element
+   * @param  {String|Array} src  ruta a un archivo de video, o matriz de rutas para
+   *                             admitir diferentes navegadores
+   * @param  {Object} [callback] función de devolución de llamada para ser 
+   *                             invocada cuando se activa el evento 'canplaythrough', es decir,
+   *                             cuando el navegador puede reproducir los medios y estima que
+   *                             se han cargado suficientes datos para reproducir los medios
+   *                             hasta el final sin tener que detenerse
+   *                             para almacenar más contenido en el búfer
+   * @return {p5.MediaElement|p5.Element} puntero al video p5.Element
    * @example
    * <div><code>
    * var vid;
@@ -953,7 +953,7 @@
    *   vid = createVideo(['small.mp4', 'small.ogv', 'small.webm'], vidLoad);
    * }
    *
-   * // This function is called when the video loads
+   * // Esta función se llama cuando se carga el video.
    * function vidLoad() {
    *   vid.play();
    * }
@@ -964,37 +964,37 @@
     return createMedia(this, 'video', src, callback);
   };
 
-  /** AUDIO STUFF **/
+  /** COSAS DE AUDIO **/
 
   /**
-   * Creates a hidden HTML5 &lt;audio&gt; element in the DOM for simple audio
-   * playback. Appends to the container node if one is specified,
-   * otherwise appends to body. The first parameter
-   * can be either a single string path to a audio file, or an array of string
-   * paths to different formats of the same audio. This is useful for ensuring
-   * that your audio can play across different browsers, as each supports
-   * different formats. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>this
-   * page for further information about supported formats</a>.
+   * Crea una etiqueta HTML5 & lt; audio & gt; elemento en el DOM para una reproducción
+   * de audio simple. Se agrega al nodo contenedor si se especifica uno,
+   * de lo contrario, se agrega al cuerpo. El primer parámetro
+   * puede ser una ruta de una sola cadena a un archivo de audio o una matriz de cadenas
+   * rutas a diferentes formatos del mismo audio. Esto es útil para asegurar
+   * que su audio puede reproducirse en diferentes navegadores, ya que cada uno admite 
+   * diferentes formatos. Mira <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'> esta
+   * página para obtener más información sobre los formatos compatibles </a>.
    *
    * @method createAudio
-   * @param  {String|String[]} [src] path to an audio file, or array of paths
-   *                             for supporting different browsers
-   * @param  {Object} [callback] callback function to be called upon
-   *                             'canplaythrough' event fire, that is, when the
-   *                             browser can play the media, and estimates that
-   *                             enough data has been loaded to play the media
-   *                             up to its end without having to stop for
-   *                             further buffering of content
-   * @return {p5.MediaElement|p5.Element} pointer to audio p5.Element  /**
+   * @param  {String|String[]} [src] ruta a un archivo de audio o matriz de rutas
+   *                             para admitir diferentes navegadores
+   * @param  {Object} [callback] función de devolución de llamada para ser invocada cuando
+   *                             el evento 'canplaythrough' se activa, es decir, cuando el
+   *                             navegador puede reproducir los medios y estima que
+   *                             se han cargado suficientes datos para reproducir los medios 
+   *                             hasta el final sin tener que detenerse para 
+   *                             almacenar más contenido en búfer.
+   * @return {p5.MediaElement|p5.Element} puntero al audio p5.element  /**
    * @example
    * <div><code>
    * var ele;
    * function setup() {
    *   ele = createAudio('assets/beat.mp3');
    *
-   *   // here we set the element to autoplay
-   *   // The element will play as soon
-   *   // as it is able to do so.
+   *   // aquí configuramos el elemento para que se reproduzca automáticamente
+   *   // El elemento se reproducirá tan pronto
+   *   // ya que puede hacerlo.
    *   ele.autoplay(true);
    * }
    * </code></div>
@@ -1004,35 +1004,35 @@
     return createMedia(this, 'audio', src, callback);
   };
 
-  /** CAMERA STUFF **/
+  /** COSAS DE CÁMARA **/
 
   p5.prototype.VIDEO = 'video';
   p5.prototype.AUDIO = 'audio';
 
-  // from: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-  // Older browsers might not implement mediaDevices at all, so we set an empty object first
+  // desde: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+  // Es posible que los navegadores más antiguos no implementen mediaDevices en absoluto, por lo que primero configuramos un objeto vacío
   if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
   }
 
-  // Some browsers partially implement mediaDevices. We can't just assign an object
-  // with getUserMedia as it would overwrite existing properties.
-  // Here, we will just add the getUserMedia property if it's missing.
+  // Algunos navegadores implementan parcialmente mediaDevices. No podemos simplemente asignar un objeto
+  // con getUserMedia ya que sobrescribiría las propiedades existentes.
+  // Aquí, simplemente agregaremos la propiedad getUserMedia si falta.
   if (navigator.mediaDevices.getUserMedia === undefined) {
     navigator.mediaDevices.getUserMedia = function(constraints) {
-      // First get ahold of the legacy getUserMedia, if present
+      // Primero consigue el getUserMedia heredado, si está presente
       var getUserMedia =
         navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-      // Some browsers just don't implement it - return a rejected promise with an error
-      // to keep a consistent interface
+      // Algunos navegadores simplemente no lo implementan: devuelven una promesa rechazada con un error
+      // para mantener una interfaz consistente
       if (!getUserMedia) {
         return Promise.reject(
-          new Error('getUserMedia is not implemented in this browser')
+          new Error('getUserMedia no está implementado en este navegador')
         );
       }
 
-      // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+      // De lo contrario, envuelva la llamada al antiguo navigator.getUserMedia con una promesa
       return new Promise(function(resolve, reject) {
         getUserMedia.call(navigator, constraints, resolve, reject);
       });
@@ -1040,25 +1040,25 @@
   }
 
   /**
-   * <p>Creates a new &lt;video&gt; element that contains the audio/video feed
-   * from a webcam. This can be drawn onto the canvas using video().</p>
-   * <p>More specific properties of the feed can be passing in a Constraints object.
-   * See the
+   * <p> Crea un nuevo & lt; video & gt; elemento que contiene el feed de audio / video
+   * desde una cámara web. Esto se puede dibujar en el lienzo usando video (). </p>
+   * <p>Se pueden pasar propiedades más específicas del feed en un objeto Constraints.
+   * Mira el siguiente enlace
    * <a href='http://w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints'> W3C
-   * spec</a> for possible properties. Note that not all of these are supported
-   * by all browsers.</p>
-   * <p>Security note: A new browser security specification requires that getUserMedia,
-   * which is behind createCapture(), only works when you're running the code locally,
-   * or on HTTPS. Learn more <a href='http://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https'>here</a>
-   * and <a href='https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia'>here</a>.</p>
+   * spec</a> para posibles propiedades. Ten en cuenta que no todos estos son compatibles
+   * por todos los navegadores.</p>
+   * <p>Nota de seguridad: una nueva especificación de seguridad del navegador requiere que getUserMedia,
+   * que está detrás de createCapture(), solo funciona cuando está ejecutando el código localmente,
+   * o en HTTPS. Aprende más <a href='http://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https'>here</a>
+   * y <a href='https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia'>here</a>.</p>
    *
    * @method createCapture
-   * @param  {String|Constant|Object}   type type of capture, either VIDEO or
-   *                                   AUDIO if none specified, default both,
-   *                                   or a Constraints object
-   * @param  {Function}                 callback function to be called once
-   *                                   stream has loaded
-   * @return {Object|p5.Element} capture video p5.Element
+   * @param  {String|Constant|Object}  tipo tipo de captura, ya sea VIDEO o
+   *                                   AUDIO si no se especifica ninguno, ambos predeterminados,
+   *                                   o un objeto de restricciones
+   * @param  {Function}                función de devolución de llamada que se llamará una vez
+   *                                   que la transmisión se ha cargado
+   * @return {Object|p5.Element} captura del video p5.Element
    * @example
    * <div class='norender'><code>
    * var capture;
@@ -1136,11 +1136,11 @@
         }
       );
     } else {
-      throw 'getUserMedia not supported in this browser';
+      throw 'getUserMedia no es compatible con este navegador';
     }
     var c = addElement(elt, this, true);
     c.loadedmetadata = false;
-    // set width and height onload metadata
+    // establecer metadatos de carga de ancho y alto
     elt.addEventListener('loadedmetadata', function() {
       elt.play();
       if (elt.width) {
@@ -1156,9 +1156,9 @@
   };
 
   /**
-   * Creates element with given tag in the DOM with given content.
-   * Appends to the container node if one is specified, otherwise
-   * appends to body.
+   * Crea un elemento con una etiqueta determinada en el DOM con un contenido determinado.
+   * Se agrega al nodo contenedor si se especifica uno, de lo contrario
+   * se agrega al cuerpo.
    *
    * @method createElement
    * @param  {String} tag tag for the new element
@@ -1166,7 +1166,7 @@
    * @return {Object|p5.Element} pointer to p5.Element holding created node
    * @example
    * <div class='norender'><code>
-   * createElement('h2', 'im an h2 p5.element!');
+   * createElement('h2', 'soy un h2 p5.element!');
    * </code></div>
    */
   p5.prototype.createElement = function(tag, content) {
@@ -1179,15 +1179,15 @@
   };
 
   // =============================================================================
-  //                         p5.Element additions
+  //                         adiciones p5.Element
   // =============================================================================
   /**
    *
-   * Adds specified class to the element.
+   * Agrega la clase especificada al elemento.
    *
    * @for p5.Element
    * @method addClass
-   * @param  {String} class name of class to add
+   * @param  {String} nombre de clase de la clase para agregar
    * @return {Object|p5.Element}
    * @example
    * <div class='norender'><code>
@@ -1197,7 +1197,7 @@
    */
   p5.Element.prototype.addClass = function(c) {
     if (this.elt.className) {
-      // PEND don't add class more than once
+      // PEND no agrega clase más de una vez
       //var regex = new RegExp('[^a-zA-Z\d:]?'+c+'[^a-zA-Z\d:]?');
       //if (this.elt.className.search(/[^a-zA-Z\d:]?hi[^a-zA-Z\d:]?/) === -1) {
       this.elt.className = this.elt.className + ' ' + c;
@@ -1210,15 +1210,15 @@
 
   /**
    *
-   * Removes specified class from the element.
+   * Elimina la clase especificada del elemento.
    *
    * @method removeClass
-   * @param  {String} class name of class to remove
+   * @param  {String} nombre de clase de la clase a eliminar
    * @return {Object|p5.Element}   * @example
    * <div class='norender'><code>
-   * // In this example, a class is set when the div is created
-   * // and removed when mouse is pressed. This could link up
-   * // with a CSS style rule to toggle style properties.
+   * // En este ejemplo, se establece una clase cuando se crea el div
+   * // y se quita cuando se presiona el mouse. Esto podría enlazar
+   * // con una regla de estilo CSS para alternar las propiedades de estilo.
    *
    * var div;
    *
@@ -1235,40 +1235,40 @@
   p5.Element.prototype.removeClass = function(c) {
     var regex = new RegExp('(?:^|\\s)' + c + '(?!\\S)');
     this.elt.className = this.elt.className.replace(regex, '');
-    this.elt.className = this.elt.className.replace(/^\s+|\s+$/g, ''); //prettify (optional)
+    this.elt.className = this.elt.className.replace(/^\s+|\s+$/g, ''); //embellecer (opcional)
     return this;
   };
 
   /**
    *
-   * Attaches the element  as a child to the parent specified.
-   * Accepts either a string ID, DOM node, or p5.Element.
-   * If no argument is specified, an array of children DOM nodes is returned.
+   * Adjunta el elemento como hijo al padre especificado.
+   * Acepta un ID de cadena, un nodo DOM o un p5.Element
+   * Si no se especifica ningún argumento, se devuelve una matriz de nodos DOM secundarios.
    *
-   * @method child
-   * @param  {String|Object|p5.Element} [child] the ID, DOM node, or p5.Element
-   *                         to add to the current element
+   * @method child - hijo
+   * @param  {String|Object|p5.Element} [child] el ID, nodo DOM, or p5.Element
+   *                         para agregar al elemento actual
    * @return {p5.Element}
    * @example
    * <div class='norender'><code>
-   * var div0 = createDiv('this is the parent');
-   * var div1 = createDiv('this is the child');
-   * div0.child(div1); // use p5.Element
+   * var div0 = createDiv('este es el padre');
+   * var div1 = createDiv('este es el niño');
+   * div0.child(div1); // usa p5.Element
    * </code></div>
    * <div class='norender'><code>
-   * var div0 = createDiv('this is the parent');
-   * var div1 = createDiv('this is the child');
+   * var div0 = createDiv('este es el padre');
+   * var div1 = createDiv('este es el niño');
    * div1.id('apples');
-   * div0.child('apples'); // use id
+   * div0.child('apples'); // usa el id
    * </code></div>
    * <div class='norender'><code>
-   * var div0 = createDiv('this is the parent');
+   * var div0 = createDiv('este es el padre');
    * var elt = document.getElementById('myChildDiv');
-   * div0.child(elt); // use element from page
+   * div0.child(elt); // usar elemento de la página
    * </code></div>
    */
   p5.Element.prototype.child = function(c) {
-    if (typeof c === 'undefined') {
+    if (typeof c === 'indefinido') {
       return this.elt.childNodes;
     }
     if (typeof c === 'string') {
@@ -1284,14 +1284,14 @@
   };
 
   /**
-   * Centers a p5 Element either vertically, horizontally,
-   * or both, relative to its parent or according to
-   * the body if the Element has no parent. If no argument is passed
-   * the Element is aligned both vertically and horizontally.
+   * Centra un elemento p5 ya sea verticalmente, horizontalmente,
+   * o ambos, en relación con su padre o de acuerdo con
+   * el cuerpo si el elemento no tiene padre. Si no se pasa ningún argumento
+   * el elemento está alineado tanto vertical como horizontalmente.
    *
    * @method center
-   * @param  {String} [align]       passing 'vertical', 'horizontal' aligns element accordingly
-   * @return {Object|p5.Element} pointer to p5.Element
+   * @param  {String} [align]      pasar 'vertical', 'horizontal' alinea el elemento en consecuencia
+   * @return {Object|p5.Element} puntero al p5.Element
    * @example
    * <div><code>
    * function setup() {
@@ -1338,16 +1338,16 @@
 
   /**
    *
-   * If an argument is given, sets the inner HTML of the element,
-   * replacing any existing html. If true is included as a second
-   * argument, html is appended instead of replacing existing html.
-   * If no arguments are given, returns
-   * the inner HTML of the element.
+   * Si se proporciona un argumento, establece el HTML interno del elemento,
+   * reemplazando cualquier html existente. Si es verdadero se incluye como segundo
+   * argumento, se agrega html en lugar de reemplazar el html existente.
+   * Si no se dan argumentos, devuelve
+   * el HTML interno del elemento.
    *
    * @for p5.Element
    * @method html
-   * @param  {String} [html] the HTML to be placed inside the element
-   * @param  {boolean} [append] whether to append HTML to existing
+   * @param  {String} [html] el HTML que se colocará dentro del elemento
+   * @param  {boolean} [append] si agregar HTML a los existentes
    * @return {Object|p5.Element|String}
    * @example
    * <div class='norender'><code>
@@ -1355,7 +1355,7 @@
    * div.html('hi');
    * </code></div>
    * <div class='norender'><code>
-   * var div = createDiv('Hello ').size(100, 100);
+   * var div = createDiv('Hola ').size(100, 100);
    * div.html('World', true);
    * </code></div>
    */
@@ -1373,21 +1373,21 @@
 
   /**
    *
-   * Sets the position of the element relative to (0, 0) of the
-   * window. Essentially, sets position:absolute and left and top
-   * properties of style. If no arguments given returns the x and y position
-   * of the element in an object.
+   * Establece la posición del elemento en relación con (0, 0) de la
+   * ventana. Esencialmente, establece la posición: absoluta, izquierda y arriba
+   * propiedades de estilo. Si no se dan argumentos, devuelve la posición xey
+   * del elemento en un objeto.
    *
    * @method position
-   * @param  {Number} [x] x-position relative to upper left of window
-   * @param  {Number} [y] y-position relative to upper left of window
+   * @param  {Number} [x] posición x relativa a la parte superior izquierda de la ventana
+   * @param  {Number} [y] posición y relativa a la parte superior izquierda de la ventana
    * @return {Object|p5.Element}
    * @example
    * <div><code class='norender'>
    * function setup() {
    *   var cnv = createCanvas(100, 100);
-   *   // positions canvas 50px to the right and 100px
-   *   // below upper left corner of the window
+   *   // coloca el lienzo 50px a la derecha y 100px
+   *   // debajo de la esquina superior izquierda de la ventana
    *   cnv.position(50, 100);
    * }
    * </code></div>
@@ -1405,10 +1405,10 @@
     }
   };
 
-  /* Helper method called by p5.Element.style() */
+  /* Método auxiliar llamado por p5.Element.style() */
   p5.Element.prototype._translate = function() {
     this.elt.style.position = 'absolute';
-    // save out initial non-translate transform styling
+    //ahorra el estilo de transformación inicial sin traducción
     var transform = '';
     if (this.elt.style.transform) {
       transform = this.elt.style.transform.replace(/translate3d\(.*\)/g, '');
@@ -1432,14 +1432,14 @@
         this.elt.parentElement.style.perspective = arguments[3] + 'px';
       }
     }
-    // add any extra transform styling back on end
+    // agrega cualquier estilo de transformación adicional al final
     this.elt.style.transform += transform;
     return this;
   };
 
-  /* Helper method called by p5.Element.style() */
+  /* Método auxiliar llamado por p5.Element.style() */
   p5.Element.prototype._rotate = function() {
-    // save out initial non-rotate transform styling
+    // ahorra el estilo de transformación inicial sin rotación
     var transform = '';
     if (this.elt.style.transform) {
       transform = this.elt.style.transform.replace(/rotate3d\(.*\)/g, '');
@@ -1456,30 +1456,30 @@
       this.elt.style.transform += 'rotateY(' + arguments[1] + 'deg)';
       this.elt.style.transform += 'rotateZ(' + arguments[2] + 'deg)';
     }
-    // add remaining transform back on
+    // agrega la transformación restante nuevamente en
     this.elt.style.transform += transform;
     return this;
   };
 
   /**
-   * Sets the given style (css) property (1st arg) of the element with the
-   * given value (2nd arg). If a single argument is given, .style()
-   * returns the value of the given property; however, if the single argument
-   * is given in css syntax ('text-align:center'), .style() sets the css
-   * appropriatly. .style() also handles 2d and 3d css transforms. If
-   * the 1st arg is 'rotate', 'translate', or 'position', the following arguments
-   * accept Numbers as values. ('translate', 10, 100, 50);
+   * Establece la propiedad de estilo dada (css) (1er argumento) del elemento con el
+   * valor dado (segundo argumento). Si se da un solo argumento, .style()
+   * devuelve el valor de la propiedad dada; sin embargo, si el único argumento
+   * se da en la sintaxis css ('text-align: center'), .style () establece el css
+   * apropiadamente. .style () también maneja transformaciones CSS 2d y 3d. Si
+   * el primer argumento es 'rotar', 'traducir' o 'posicionar', los siguientes argumentos
+   * aceptar números como valores. ('traducir', 10, 100, 50);
    *
    * @method style
-   * @param  {String} property   property to be set
-   * @param  {String|Number|p5.Color} [value]   value to assign to property (only String|Number for rotate/translate)
-   * @param  {String|Number|p5.Color} [value2]  position can take a 2nd value
-   * @param  {String|Number|p5.Color} [value3]  translate can take a 2nd & 3rd value
-   * @return {String|Object|p5.Element} value of property, if no value is specified
+   * @param  {String} property   propiedad a establecer
+   * @param  {String|Number|p5.Color} [value]   valor para asignar a la propiedad (solo Cadena | Número para rotar / traducir)
+   * @param  {String|Number|p5.Color} [value2]  la posición puede tomar un segundo valor
+   * @param  {String|Number|p5.Color} [value3]  traducir puede tomar un segundo y tercer valor
+   * @return {String|Object|p5.Element} valor de la propiedad, si no se especifica ningún valor
    * or p5.Element
    * @example
    * <div><code class='norender'>
-   * var myDiv = createDiv('I like pandas.');
+   * var myDiv = createDiv('Me gustan los pandas.');
    * myDiv.style('font-size', '18px');
    * myDiv.style('color', '#ff0000');
    * </code></div>
@@ -1490,7 +1490,7 @@
    * button.position(10, 10);
    * </code></div>
    * <div><code class='norender'>
-   * var myDiv = createDiv('I like lizards.');
+   * var myDiv = createDiv('Me gustan las lagartijas.');
    * myDiv.style('position', 20, 20);
    * myDiv.style('rotate', 45);
    * </code></div>
@@ -1498,7 +1498,7 @@
    * var myDiv;
    * function setup() {
    *   background(200);
-   *   myDiv = createDiv('I like gray.');
+   *   myDiv = createDiv('Me gusta el gris.');
    *   myDiv.position(20, 20);
    * }
    *
@@ -1551,7 +1551,7 @@
           prop === 'top'
         ) {
           var numVal = val.replace(/\D+/g, '');
-          this[prop] = parseInt(numVal, 10); // pend: is this necessary?
+          this[prop] = parseInt(numVal, 10); // pend: ¿Es esto necesario?
         }
       }
     }
@@ -1560,24 +1560,24 @@
 
   /**
    *
-   * Adds a new attribute or changes the value of an existing attribute
-   * on the specified element. If no value is specified, returns the
-   * value of the given attribute, or null if attribute is not set.
+   * Agrega un nuevo atributo o cambia el valor de un atributo existente
+   * en el elemento especificado. Si no se especifica ningún valor, devuelve el
+   * valor del atributo dado, o nulo si el atributo no está establecido.
    *
    * @method attribute
-   * @param  {String} attr       attribute to set
-   * @param  {String} [value]    value to assign to attribute
-   * @return {String|Object|p5.Element} value of attribute, if no value is
-   *                             specified or p5.Element
+   * @param  {String} attr       atributo para establecer
+   * @param  {String} [value]    valor para asignar al atributo
+   * @return {String|Object|p5.Element} valor del atributo, si no hay valor
+   *                             específico o p5.Element
    * @example
    * <div class='norender'><code>
-   * var myDiv = createDiv('I like pandas.');
+   * var myDiv = createDiv('Me gustan los pandas.');
    * myDiv.attribute('align', 'center');
    * </code></div>
    */
   p5.Element.prototype.attribute = function(attr, value) {
-    //handling for checkboxes and radios to ensure options get
-    //attributes not divs
+    //manejo de casillas de verificación y radios para garantizar que las opciones obtengan
+    //atributos no divs
     if (
       this.elt.firstChild != null &&
       (this.elt.firstChild.type === 'checkbox' ||
@@ -1600,10 +1600,10 @@
 
   /**
    *
-   * Removes an attribute on the specified element.
+   * Elimina un atributo del elemento especificado.
    *
    * @method removeAttribute
-   * @param  {String} attr       attribute to remove
+   * @param  {String} attr       atributo para eliminar
    * @return {Object|p5.Element}
    *
    * @example
@@ -1620,10 +1620,10 @@
    *
    * function enableButton() {
    *   if (this.checked()) {
-   *     // Re-enable the button
+   *     // Vuelva a habilitar el botón
    *     button.removeAttribute('disabled');
    *   } else {
-   *     // Disable the button
+   *     // Desactivar el botón
    *     button.attribute('disabled', '');
    *   }
    * }
@@ -1644,15 +1644,15 @@
   };
 
   /**
-   * Either returns the value of the element if no arguments
-   * given, or sets the value of the element.
+   * O devuelve el valor del elemento si no hay argumentos
+   * dados, o establece el valor del elemento.
    *
    * @method value
    * @param  {String|Number}     [value]
-   * @return {String|Object|p5.Element} value of element if no value is specified or p5.Element
+   * @return {String|Object|p5.Element} valor del elemento si no se especifica ningún valor o p5.
    * @example
    * <div class='norender'><code>
-   * // gets the value
+   * // obtiene el valor
    * var inp;
    * function setup() {
    *   inp = createInput('');
@@ -1663,7 +1663,7 @@
    * }
    * </code></div>
    * <div class='norender'><code>
-   * // sets the value
+   * // establece el valor
    * var inp;
    * function setup() {
    *   inp = createInput('myValue');
@@ -1687,7 +1687,7 @@
 
   /**
    *
-   * Shows the current element. Essentially, setting display:block for the style.
+   * Muestra el elemento actual. Esencialmente, configuración de visualización: bloque para el estilo.
    *
    * @method show
    * @return {Object|p5.Element}
@@ -1695,7 +1695,7 @@
    * <div class='norender'><code>
    * var div = createDiv('div');
    * div.style('display', 'none');
-   * div.show(); // turns display to block
+   * div.show(); // convierte la pantalla en bloque
    * </code></div>
    */
   p5.Element.prototype.show = function() {
@@ -1704,13 +1704,13 @@
   };
 
   /**
-   * Hides the current element. Essentially, setting display:none for the style.
+   * Oculta el elemento actual. Esencialmente, configuración de pantalla: ninguna para el estilo.
    *
    * @method hide
    * @return {Object|p5.Element}
    * @example
    * <div class='norender'><code>
-   * var div = createDiv('this is a div');
+   * var div = createDiv('esta es una div');
    * div.hide();
    * </code></div>
    */
@@ -1721,17 +1721,17 @@
 
   /**
    *
-   * Sets the width and height of the element. AUTO can be used to
-   * only adjust one dimension. If no arguments given returns the width and height
-   * of the element in an object.
+   * Establece el ancho y alto del elemento. AUTO se puede utilizar para
+   * solo ajustar una dimensión. Si no se proporcionan argumentos, devuelve el ancho y el alto
+   * del elemento en un objeto.
    *
    * @method size
-   * @param  {Number|Constant} [w] width of the element, either AUTO, or a number
-   * @param  {Number|Constant} [h] height of the element, either AUTO, or a number
+   * @param  {Number|Constant} [w] ancho del elemento, ya sea AUTO o un número
+   * @param  {Number|Constant} [h] altura del elemento, ya sea AUTO o un número
    * @return {Object|p5.Element}
    * @example
    * <div class='norender'><code>
-   * var div = createDiv('this is a div');
+   * var div = createDiv('esta es una div');
    * div.size(100, 100);
    * </code></div>
    */
@@ -1748,7 +1748,7 @@
         } else if (aH === AUTO) {
           aH = w * this.height / this.width;
         }
-        // set diff for cnv vs normal div
+        // establecer diff para cnv vs div normal
         if (this.elt instanceof HTMLCanvasElement) {
           var j = {};
           var k = this.elt.getContext('2d');
@@ -1782,7 +1782,7 @@
         this.height = this.elt.offsetHeight;
 
         if (this._pInst) {
-          // main canvas associated with p5 instance
+          // lienzo principal asociado con la instancia p5
           if (this._pInst._curElement.elt === this.elt) {
             this._pInst._setProperty('width', this.elt.offsetWidth);
             this._pInst._setProperty('height', this.elt.offsetHeight);
@@ -1794,16 +1794,16 @@
   };
 
   /**
-   * Removes the element and deregisters all listeners.
-   * @method remove
+   * Elimina el elemento y anula el registro de todos los oyentes.
+   * @method remove - eliminar
    * @example
    * <div class='norender'><code>
-   * var myDiv = createDiv('this is some text');
+   * var myDiv = createDiv('este es un texto');
    * myDiv.remove();
    * </code></div>
    */
   p5.Element.prototype.remove = function() {
-    // deregister events
+    // anular el registro de eventos
     for (var ev in this._events) {
       this.elt.removeEventListener(ev, this._events[ev]);
     }
@@ -1814,18 +1814,18 @@
   };
 
   // =============================================================================
-  //                         p5.MediaElement additions
+  //                        adiciones p5.MediaElement
   // =============================================================================
 
   /**
-   * Extends p5.Element to handle audio and video. In addition to the methods
-   * of p5.Element, it also contains methods for controlling media. It is not
-   * called directly, but p5.MediaElements are created by calling createVideo,
-   * createAudio, and createCapture.
+   * Extiende p5.Element para manejar audio y video. Además de los métodos
+   * de p5.Element, también contiene métodos para controlar los medios. No lo es
+   * llamado directamente, pero p5.MediaElements se crean llamando a createVideo,
+   * createAudio y createCapture.
    *
    * @class p5.MediaElement
    * @constructor
-   * @param {String} elt DOM node that is wrapped
+   * @param {String} elt nodo DOM que está envuelto
    */
   p5.MediaElement = function(elt, pInst) {
     p5.Element.call(this, elt, pInst);
@@ -1840,7 +1840,7 @@
     this._modified = false;
 
     /**
-     * Path to the media element source.
+     * Ruta a la fuente del elemento multimedia.
      *
      * @property src
      * @return {String} src
@@ -1851,27 +1851,27 @@
      * function setup() {
      *   background(250);
      *
-     *   //p5.MediaElement objects are usually created
-     *   //by calling the createAudio(), createVideo(),
-     *   //and createCapture() functions.
+     *   //Los objetos p5.MediaElement generalmente se crean
+     *   //llamando a createAudio(), createVideo(), y 
+     *   //funciones createCapture().
      *
-     *   //In this example we create
-     *   //a new p5.MediaElement via createAudio().
+     *   //En este ejemplo creamos
+     *   //un nuevo p5.MediaElement a través de createAudio ().
      *   ele = createAudio('assets/beat.mp3');
      *
-     *   //We'll set up our example so that
-     *   //when you click on the text,
-     *   //an alert box displays the MediaElement's
-     *   //src field.
+     *   //Configuraremos nuestro ejemplo para que
+     *   //cuando haces clic en el texto,
+     *   //un cuadro de alerta muestra el MediaElement
+     *   // campo src.
      *   textAlign(CENTER);
-     *   text('Click Me!', width / 2, height / 2);
+     *   text('Haz clic en mi!', width / 2, height / 2);
      * }
      *
      * function mouseClicked() {
-     *   //here we test if the mouse is over the
-     *   //canvas element when it's clicked
+     *   //aquí probamos si el mouse está sobre el elemento
+     *   //de lienzo cuando se hace clic
      *   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
-     *     //Show our p5.MediaElement's src field
+     *     //Mostrar el campo src de nuestro p5.MediaElement
      *     alert(ele.src);
      *   }
      * }
@@ -1897,7 +1897,7 @@
       }
     });
 
-    // private _onended callback, set by the method: onended(callback)
+    // devolución de llamada privada _onended, establecida por el método: onended (devolución de llamada)
     self._onended = function() {};
     self.elt.onended = function() {
       self._onended(self);
@@ -1906,7 +1906,7 @@
   p5.MediaElement.prototype = Object.create(p5.Element.prototype);
 
   /**
-   * Play an HTML5 media element.
+   * Reproduce un elemento multimedia HTML5.
    *
    * @method play
    * @return {Object|p5.Element}
@@ -1915,30 +1915,30 @@
    * var ele;
    *
    * function setup() {
-   *   //p5.MediaElement objects are usually created
-   *   //by calling the createAudio(), createVideo(),
-   *   //and createCapture() functions.
+   *   //Los objetos p5.MediaElement generalmente se crean
+   *   //llamando a createAudio(), createVideo(),
+   *   //y funciones createCapture().
    *
-   *   //In this example we create
-   *   //a new p5.MediaElement via createAudio().
+   *   //En este ejemplo creamos
+   *   //un nuevo p5.MediaElement a través de createAudio().
    *   ele = createAudio('assets/beat.mp3');
    *
    *   background(250);
    *   textAlign(CENTER);
-   *   text('Click to Play!', width / 2, height / 2);
+   *   text('¡Haz "clic" para jugar!', width / 2, height / 2);
    * }
    *
    * function mouseClicked() {
-   *   //here we test if the mouse is over the
-   *   //canvas element when it's clicked
+   *   //aquí probamos si el mouse está sobre el
+   *   //elemento de lienzo cuando se hace clic
    *   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
-   *     //Here we call the play() function on
-   *     //the p5.MediaElement we created above.
-   *     //This will start the audio sample.
+   *     //Aquí llamamos a la función play() en el 
+   *     //p5.MediaElement que creamos arriba.
+   *     //Esto iniciará la muestra de audio.
    *     ele.play();
    *
    *     background(200);
-   *     text('You clicked Play!', width / 2, height / 2);
+   *     text('¡Hiciste clic en Reproducir!', width / 2, height / 2);
    *   }
    * }
    * </code></div>
@@ -1951,7 +1951,7 @@
     if (this.elt.readyState > 1) {
       this.elt.play();
     } else {
-      // in Chrome, playback cannot resume after being stopped and must reload
+      // en Chrome, la reproducción no se puede reanudar después de detenerse y debe recargarse
       this.elt.load();
       this.elt.play();
     }
@@ -1959,54 +1959,54 @@
   };
 
   /**
-   * Stops an HTML5 media element (sets current time to zero).
+   * Detiene un elemento multimedia HTML5 (establece la hora actual en cero).
    *
    * @method stop
    * @return {Object|p5.Element}
    * @example
    * <div><code>
-   * //This example both starts
-   * //and stops a sound sample
-   * //when the user clicks the canvas
+   * //Este ejemplo comienza
+   * //y detiene una muestra de sonido
+   * //cuando el usuario hace clic en el lienzo
    *
-   * //We will store the p5.MediaElement
-   * //object in here
+   * //Almacenaremos el p5.MediaElement
+   * //objeto aquí
    * var ele;
    *
-   * //while our audio is playing,
-   * //this will be set to true
+   * //mientras se reproduce nuestro audio,
+   * //esto se establecerá en verdadero
    * var sampleIsPlaying = false;
    *
    * function setup() {
-   *   //Here we create a p5.MediaElement object
-   *   //using the createAudio() function.
+   *   //Aquí creamos un objeto p5.MediaElement
+   *   //usando la función createAudio().
    *   ele = createAudio('assets/beat.mp3');
    *   background(200);
    *   textAlign(CENTER);
-   *   text('Click to play!', width / 2, height / 2);
+   *   text('¡Dale "click" para jugar!', width / 2, height / 2);
    * }
    *
    * function mouseClicked() {
-   *   //here we test if the mouse is over the
-   *   //canvas element when it's clicked
+   *   //aquí probamos si el mouse está sobre el
+   *   //elemento de lienzo cuando se hace clic
    *   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
    *     background(200);
    *
    *     if (sampleIsPlaying) {
-   *       //if the sample is currently playing
-   *       //calling the stop() function on
-   *       //our p5.MediaElement will stop
-   *       //it and reset its current
-   *       //time to 0 (i.e. it will start
-   *       //at the beginning the next time
-   *       //you play it)
+   *       //si la muestra se está reproduciendo actualmente
+   *       //llamando a la función stop() en
+   *       //nuestro p5.MediaElement se detendrá
+   *       //y restablecer su corriente
+   *       //tiempo a 0 (es decir, comenzará
+   *       //al principio la próxima vez
+   *       //lo juegas)
    *       ele.stop();
    *
    *       sampleIsPlaying = false;
-   *       text('Click to play!', width / 2, height / 2);
+   *       text('¡Dale "click" para jugar!', width / 2, height / 2);
    *     } else {
-   *       //loop our sound element until we
-   *       //call ele.stop() on it.
+   *       //bucle nuestro elemento de sonido hasta que
+   *       //llama a ele.stop () en él.
    *       ele.loop();
    *
    *       sampleIsPlaying = true;
@@ -2023,27 +2023,27 @@
   };
 
   /**
-   * Pauses an HTML5 media element.
+   * Pausa un elemento multimedia HTML5.
    *
    * @method pause
    * @return {Object|p5.Element}
    * @example
    * <div><code>
-   * //This example both starts
-   * //and pauses a sound sample
-   * //when the user clicks the canvas
+   * //Este ejemplo comienza
+   * //y pausa una muestra de sonido
+   * //cuando el usuario hace clic en el lienzo
    *
-   * //We will store the p5.MediaElement
-   * //object in here
+   * //Almacenaremos el p5.MediaElement
+   * //objeto aquí
    * var ele;
    *
-   * //while our audio is playing,
-   * //this will be set to true
+   * //mientras se reproduce nuestro audio,
+   * //esto se establecerá en verdadero
    * var sampleIsPlaying = false;
    *
    * function setup() {
-   *   //Here we create a p5.MediaElement object
-   *   //using the createAudio() function.
+   *   //Aquí creamos un objeto p5.MediaElement
+   *   //usando la función createAudio ().
    *   ele = createAudio('assets/lucky_dragons.mp3');
    *   background(200);
    *   textAlign(CENTER);
@@ -2051,25 +2051,25 @@
    * }
    *
    * function mouseClicked() {
-   *   //here we test if the mouse is over the
-   *   //canvas element when it's clicked
+   *   //aquí probamos si el mouse está sobre el
+   *   //elemento de lienzo cuando se hace clic
    *   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
    *     background(200);
    *
    *     if (sampleIsPlaying) {
-   *       //Calling pause() on our
-   *       //p5.MediaElement will stop it
-   *       //playing, but when we call the
-   *       //loop() or play() functions
-   *       //the sample will start from
-   *       //where we paused it.
+   *       //Llamando a pause() en nuestro
+   *       //p5.MediaElement lo detendrá
+   *       //jugando, pero cuando llamamos al
+   *       //funciones loop () o play ()
+   *       //la muestra comenzará
+   *       //desde donde lo detuvimos.
    *       ele.pause();
    *
    *       sampleIsPlaying = false;
-   *       text('Click to resume!', width / 2, height / 2);
+   *       text('¡Haz clic para reanudar!', width / 2, height / 2);
    *     } else {
-   *       //loop our sound element until we
-   *       //call ele.pause() on it.
+   *       //repite nuestro elemento de sonido hasta que
+   *       //llama a ele.pause () en él.
    *       ele.loop();
    *
    *       sampleIsPlaying = true;
@@ -2085,51 +2085,51 @@
   };
 
   /**
-   * Set 'loop' to true for an HTML5 media element, and starts playing.
+   * Establece 'loop' en verdadero para un elemento multimedia HTML5 y comience a reproducir.
    *
    * @method loop
    * @return {Object|p5.Element}
    * @example
    * <div><code>
-   * //Clicking the canvas will loop
-   * //the audio sample until the user
-   * //clicks again to stop it
+   * //Al hacer clic en el lienzo se repetirá
+   * //la muestra de audio hasta que el usuario
+   * //vuelva a hacer clic para detenerlo
    *
-   * //We will store the p5.MediaElement
-   * //object in here
+   * //Almacenaremos el objeto 
+   * //p5.MediaElement aquí
    * var ele;
    *
-   * //while our audio is playing,
-   * //this will be set to true
+   * //mientras se reproduce nuestro audio,
+   * //esto se establecerá en verdadero
    * var sampleIsLooping = false;
    *
    * function setup() {
-   *   //Here we create a p5.MediaElement object
-   *   //using the createAudio() function.
+   *   //Aquí creamos un objeto p5.MediaElement
+   *   //usando la función createAudio().
    *   ele = createAudio('assets/lucky_dragons.mp3');
    *   background(200);
    *   textAlign(CENTER);
-   *   text('Click to loop!', width / 2, height / 2);
+   *   text('¡Haz clic para hacer un bucle!', width / 2, height / 2);
    * }
    *
    * function mouseClicked() {
-   *   //here we test if the mouse is over the
-   *   //canvas element when it's clicked
+   *   //aquí probamos si el ratón está sobre el
+   *   //elemento de lienzo cuando se hace clic
    *   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
    *     background(200);
    *
    *     if (!sampleIsLooping) {
-   *       //loop our sound element until we
-   *       //call ele.stop() on it.
+   *       //bucle nuestro elemento de sonido hasta que
+   *       //llama a ele.stop () en él.
    *       ele.loop();
    *
    *       sampleIsLooping = true;
-   *       text('Click to stop!', width / 2, height / 2);
+   *       text('Haz clic para detener!', width / 2, height / 2);
    *     } else {
    *       ele.stop();
    *
    *       sampleIsLooping = false;
-   *       text('Click to loop!', width / 2, height / 2);
+   *       text('¡Haz clic para hacer un bucle!', width / 2, height / 2);
    *     }
    *   }
    * }
@@ -2141,22 +2141,22 @@
     return this;
   };
   /**
-   * Set 'loop' to false for an HTML5 media element. Element will stop
-   * when it reaches the end.
+   * Establezca 'loop' en falso para un elemento multimedia HTML5. El elemento se detendrá
+   * cuando llega al final.
    *
    * @method noLoop
    * @return {Object|p5.Element}
    * @example
    * <div><code>
-   * //This example both starts
-   * //and stops loop of sound sample
-   * //when the user clicks the canvas
+   * //Este ejemplo comienza
+   * //y detiene el bucle de la muestra de sonido
+   * //cuando el usuario hace clic en el lienzo
    *
-   * //We will store the p5.MediaElement
-   * //object in here
+   * //Almacenaremos el objeto 
+   * //p5.MediaElement aquí
    * var ele;
-   * //while our audio is playing,
-   * //this will be set to true
+   * //mientras se reproduce nuestro audio,
+   * //esto se establecerá en verdadero
    * var sampleIsPlaying = false;
    *
    * function setup() {
